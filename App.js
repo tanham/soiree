@@ -7,10 +7,11 @@ import {
   Button
 } from 'react-native';
 
-import Header from './src/components/header';
-import PageHeader from './src/components/page_header';
+import Header from './src/components/Header';
+import PageHeader from './src/components/PageHeader';
 
 const App = () => {
+
   return (
     <View>
       <Header headerText={'Soiree'} />
