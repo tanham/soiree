@@ -9,6 +9,7 @@ import {
 
 import Header from './src/components/Header';
 import PageHeader from './src/components/PageHeader';
+import DatesList from './src/components/DatesList';
 
 const App = () => {
 
@@ -23,7 +24,7 @@ const App = () => {
       />
 
       <PageHeader pageHeaderText={'Featured Dates'} />
-
+      <DatesList />
     </View>
   );
 };
