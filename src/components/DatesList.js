@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 import axios from 'axios';
+import DateDetail from './DateDetail';
 
-// TODO: consider changing the name from dates to activities or outings
 class DatesList extends Component {
+  // TODO: consider changing the name from dates to activities or outings
+
   // set initial state for component
   // this is called a class level property, can also use a constructor or setInitialState - same thing
   state = { dates: [] };
@@ -20,7 +22,9 @@ class DatesList extends Component {
   renderDates() {
     // react need a way to identify each child element to properly render, unique identifer as key, based on the content itself like a child element's id
     // wants to know which thing in the list to update
-    return this.state.dates.map(date => <Text key={date.id}>{date.fields.Name}</Text>);
+    return this.state.dates.map(date =>
+      <DateDetail key={date.id} date={date} />
+    );
   }
 
   render() {
