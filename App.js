@@ -17,6 +17,7 @@ const App = () => {
     <View>
       <Header headerText={'Soiree'} />
 
+      // TODO: create a helper funtion to call in onPress
       <Button
         onPress={this.console.log("pressed the button")}
         title="Find Dates"
