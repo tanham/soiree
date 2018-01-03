@@ -11,14 +11,22 @@ class DatesList extends Component {
     // will automatically be executed when component is about to be rendered
     // console.log('in lifecycle method');
     axios.get('https://api.airtable.com/v0/appQOuPTL2lMDh87Y/Date%20Ideas?api_key=keyDbdvLevKL7L4oK')
-    // .then(response => this.setState({ dates: response.data}));
-    .then(response => console.log(response));
+    // updates dates piece of state
+    .then(response => this.setState({ dates: response.data.records}));
+    // .then(response => console.log(response));
+  }
+
+  renderDates() {
+    // react need a way to identify each child element to properly render, unique identifer as key, based on the content itself like a child element's id
+    // wants to know which thing in the list to update
+    return this.state.dates.map(date => <Text key={date.id}>{JSON.stringify(date)}</Text>);
   }
 
   render() {
+    console.log(this.state.dates);
     return (
       <View>
-          <Text>Dates List!!!</Text>
+          {this.renderDates()}
       </View>
     );
   }
