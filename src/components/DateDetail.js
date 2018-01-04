@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text} from 'react-native';
+import { Text, View, Image } from 'react-native';
 import Card from './Card';
 import CardSection from './CardSection';
 
@@ -7,11 +7,22 @@ const DateDetail = (props) => {
   return (
     <Card>
       <CardSection>
-        <Text>{props.date.fields.Name}</Text>
+        <View style={styles.headerContentStyle}>
+          <Text>{props.date.fields.Name}</Text>
+          <Text>Some location</Text>
+        </View>
       </CardSection>
-      
+
     </Card>
   );
 };
+
+const styles = {
+  headerContentStyle: {
+    flexDirection: 'column',
+    justifyContent: 'space-around'
+  }
+};
+
 
 export default DateDetail;
