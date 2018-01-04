@@ -1,11 +1,15 @@
 import React from 'react';
 import { Text} from 'react-native';
 import Card from './Card';
+import CardSection from './CardSection';
 
 const DateDetail = (props) => {
   return (
     <Card>
-      <Text>{props.date.fields.Name}</Text>
+      <CardSection>
+        <Text>{props.date.fields.Name}</Text>
+      </CardSection>
+      
     </Card>
   );
 };
