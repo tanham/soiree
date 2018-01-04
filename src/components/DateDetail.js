@@ -1,11 +1,12 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Text} from 'react-native';
+import Card from './Card';
 
 const DateDetail = (props) => {
   return (
-    <View>
+    <Card>
       <Text>{props.date.fields.Name}</Text>
-    </View>
+    </Card>
   );
 };
 
