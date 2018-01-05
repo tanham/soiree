@@ -12,7 +12,6 @@ class DatesList extends Component {
 
   componentWillMount() {
     // will automatically be executed when component is about to be rendered
-    // console.log('in lifecycle method');
     axios.get('https://api.airtable.com/v0/appQOuPTL2lMDh87Y/Date%20Ideas?api_key=keyDbdvLevKL7L4oK')
     // updates dates piece of state
     .then(response => this.setState({ dates: response.data.records}));

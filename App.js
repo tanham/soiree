@@ -4,31 +4,53 @@ import {
   // StyleSheet,
   Text,
   View,
+  ScrollView,
   Button
 } from 'react-native';
 
 import Header from './src/components/Header';
 import PageHeader from './src/components/PageHeader';
 import DatesList from './src/components/DatesList';
+import SamplePage from './src/components/SamplePage';
 
-const App = () => {
+class App extends Component {
+  state = { page:1 };
 
-  return (
-    <View>
-      <Header headerText={'Soiree'} />
+  handleButtonPress() {
+    console.log(this);
+    this.setState({ page: 2 });
+  }
 
-      <Button
-        // TODO: create a helper funtion to call in onPress
+  render() {
+    return (
+      <ScrollView>
+      {this.state.page === 1 &&
+        <View>
+          <Header headerText={'Soiree'} />
 
-        onPress={this.console.log("pressed the button")}
-        title="Find Dates"
-        color="#841584"
-      />
+          <Button
+          // TODO: create a helper funtion to call in onPress
 
-      <PageHeader pageHeaderText={'Featured Dates'} />
-      <DatesList />
-    </View>
-  );
-};
+          onPress={this.handleButtonPress.bind(this)}
+          title="Find Dates"
+          color="#841584"
+          />
+
+          <PageHeader pageHeaderText={'Featured Dates'} />
+          <PageHeader pageHeaderText={'...loading from dummy API'} />
+
+          <DatesList />
+        </View>
+      }
+      {this.state.page === 2 &&
+
+        <SamplePage>
+          <Text>Sample Page Content</Text>
+        </SamplePage>
+      }
+      </ScrollView>
+    );
+  }
+}
 
 export default App;
