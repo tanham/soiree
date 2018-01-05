@@ -1,4 +1,7 @@
 {
-  "name": "soiree",
-  "displayName": "soiree"
+  "expo": {
+    "name": "soiree",
+    "slug": "soiree",
+    "sdkVersion": "18.0.0"
+  }
 }
