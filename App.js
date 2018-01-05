@@ -40,7 +40,7 @@ class App extends Component {
           <PageHeader pageHeaderText={'...loading from dummy API'} />
 
           <DatesList />
-        </ScrollView>
+        </View>
       }
       {this.state.page === 2 &&
 
@@ -48,7 +48,7 @@ class App extends Component {
           <Text>Sample Page Content</Text>
         </SamplePage>
       }
-      </View>
+      </ScrollView>
     );
   }
 }
