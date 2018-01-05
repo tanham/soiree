@@ -3,7 +3,7 @@ import {
   // Platform,
   // StyleSheet,
   Text,
-  View,
+  ScrollView,
   Button
 } from 'react-native';
 
@@ -14,7 +14,7 @@ import DatesList from './src/components/DatesList';
 const App = () => {
 
   return (
-    <View>
+    <ScrollView>
       <Header headerText={'Soiree'} />
 
       <Button
@@ -27,7 +27,7 @@ const App = () => {
 
       <PageHeader pageHeaderText={'Featured Dates'} />
       <DatesList />
-    </View>
+    </ScrollView>
   );
 };
 
