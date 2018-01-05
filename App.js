@@ -36,7 +36,7 @@ class App extends Component {
           color="#841584"
           />
 
-          <PageHeader pageHeaderText={'Featured Dates ...loading from dummy API'} />
+          <PageHeader pageHeaderText={'Featured Dates'} />
           <PageHeader pageHeaderText={'...loading from dummy API'} />
 
           <DatesList />
