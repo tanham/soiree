@@ -17,7 +17,6 @@ class App extends Component {
   state = { page:1 };
 
   handleButtonPress() {
-    console.log(this);
     this.setState({ page: 2 });
   }
 
