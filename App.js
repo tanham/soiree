@@ -3,6 +3,7 @@ import {
   // Platform,
   // StyleSheet,
   Text,
+  View,
   ScrollView,
   Button
 } from 'react-native';
@@ -10,30 +11,46 @@ import {
 import Header from './src/components/Header';
 import PageHeader from './src/components/PageHeader';
 import DatesList from './src/components/DatesList';
+import SamplePage from './src/components/SamplePage';
 
-const App = () => {
+class App extends Component {
+  state = { page:1 };
 
-  return (
-    // <View>
-    // {this.state.page === 1 &&
-    //   <View>
-    //     <Header headerText={'Soiree'} />
-    <ScrollView>
+  handleButtonPress() {
+    console.log(this);
+    this.setState({ page: 2 });
+  }
+
+  render() {
+    return (
+      <ScrollView>
       {this.state.page === 1 &&
-        <Header headerText={'Soiree'} />
+        <View>
+          <Header headerText={'Soiree'} />
 
-        <Button
+          <Button
           // TODO: create a helper funtion to call in onPress
 
-          onPress={this.console.log("pressed the button")}
+          onPress={this.handleButtonPress.bind(this)}
           title="Find Dates"
           color="#841584"
-        />
+          />
 
-        <PageHeader pageHeaderText={'Featured Dates'} />
-        <DatesList />
-      </ScrollView>
+          <PageHeader pageHeaderText={'Featured Dates ...loading from dummy API'} />
+          <PageHeader pageHeaderText={'...loading from dummy API'} />
+
+          <DatesList />
+        </ScrollView>
+      }
+      {this.state.page === 2 &&
+
+        <SamplePage>
+          <Text>Sample Page Content</Text>
+        </SamplePage>
+      }
+      </View>
     );
-  };
+  }
+}
 
 export default App;
