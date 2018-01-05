@@ -20,6 +20,10 @@ class App extends Component {
     this.setState({ page: 2 });
   }
 
+  backButtonPress() {
+    this.setState({ page: 1 });
+  }
+
   render() {
     return (
       <ScrollView>
@@ -44,6 +48,13 @@ class App extends Component {
       {this.state.page === 2 &&
 
         <SamplePage>
+          <Button
+          // TODO: create a helper funtion to call in onPress
+
+          onPress={this.backButtonPress.bind(this)}
+          title="Go Back"
+          color="#841584"
+          />
           <Text>Sample Page Content</Text>
         </SamplePage>
       }
