@@ -32,8 +32,6 @@ class App extends Component {
           <Header headerText={'Soiree'} />
 
           <Button
-          // TODO: create a helper funtion to call in onPress
-
           onPress={this.handleButtonPress.bind(this)}
           title="Find Dates"
           color="#841584"
@@ -43,14 +41,18 @@ class App extends Component {
           <PageHeader pageHeaderText={'...loading from dummy API'} />
 
           <DatesList />
+
+          <Button
+          onPress={this.backButtonPress.bind(this)}
+          title="See more"
+          color="#841584"
+          />
         </View>
       }
       {this.state.page === 2 &&
 
         <SamplePage>
           <Button
-          // TODO: create a helper funtion to call in onPress
-
           onPress={this.backButtonPress.bind(this)}
           title="Go Back"
           color="#841584"

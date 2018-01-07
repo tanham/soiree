@@ -21,9 +21,12 @@ class DatesList extends Component {
   renderDates() {
     // react need a way to identify each child element to properly render, unique identifer as key, based on the content itself like a child element's id
     // wants to know which thing in the list to update
-    return this.state.dates.map(date =>
+
+    let renderedDates = this.state.dates.map(date =>
       <DateDetail key={date.id} date={date} />
     );
+
+    return renderedDates.slice(0,6);
   }
 
   render() {
