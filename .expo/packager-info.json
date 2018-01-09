@@ -1,8 +1,8 @@
 {
-  "expoServerPort": 19000,
-  "packagerPort": 19002,
-  "packagerPid": 12855,
-  "expoServerNgrokUrl": "https://xk-3ea.tanham.soiree.exp.direct",
-  "packagerNgrokUrl": "https://packager.xk-3ea.tanham.soiree.exp.direct",
-  "ngrokPid": 12870
+  "expoServerPort": null,
+  "packagerPort": null,
+  "packagerPid": null,
+  "expoServerNgrokUrl": null,
+  "packagerNgrokUrl": null,
+  "ngrokPid": null
 }
