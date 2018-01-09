@@ -26,7 +26,7 @@ class DatesList extends Component {
       <DateDetail key={date.id} date={date} />
     );
 
-    return renderedDates.slice(0,6);
+    return renderedDates.slice(0,4);
   }
 
   render() {
