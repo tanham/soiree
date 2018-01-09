@@ -8,11 +8,8 @@ class Home extends Component {
   render() {
     return (
       <ScrollView>
-        <Header headerText={'Soiree'} />
         <DatesList />
       </ScrollView>
-
-
     );
   }
 }
