@@ -9,11 +9,9 @@ import '../global';
 
 const DateDetail = (props) => {
   return (
-
     <View>
-    <Text>{props.date.name}</Text>
+      <Text>{props.date.name}</Text>
     </View>
-
   );
 };
 
@@ -50,14 +48,12 @@ export default class DateSearch extends React.Component {
 
     let location = await Location.getCurrentPositionAsync({});
     this.setState({ location });
-    console.log(`lat: ${location.coords.latitude}`);
-    console.log(`lng: ${location.coords.longitude}`);
+    console.log(`lat: ${location.coords.latitude},lng: ${location.coords.longitude}`);
   };
 
   makeApiRequest() {
     let url = `${placesSearchBaseURL}${this.state.location.coords.latitude},${this.state.location.coords.longitude}&radius=500&key=${GOOGLE_API_KEY}`;
     // will automatically be executed when component is about to be rendered
-    console.log(url);
     axios.get(url)
     // updates dates piece of state
     .then(response => this.setState({ dates: response.data.results }));
@@ -69,7 +65,6 @@ export default class DateSearch extends React.Component {
     let renderedDates = this.state.dates.map(date =>
       <DateDetail key={date.id} date={date} />
     );
-    console.log(renderedDates);
     return renderedDates;
   }
 
@@ -79,28 +74,30 @@ export default class DateSearch extends React.Component {
   };
 
   render() {
-
     return (
       <View>
 
-      {this.props.children}
+        {this.props.children}
 
-      {// location input form
-        /*<FormLabel>Where You At?</FormLabel>
-      <View></View>
-      <FormInput onChangeText={this.dummyfunction}/>
-      <FormValidationMessage>{'This field is required'}</FormValidationMessage>
-      */}
-      <Text style={styles.paragraph}>WHERE YOU AT?</Text>
+        {// location input form
+          /*<FormLabel>Where You At?</FormLabel>
+        <View></View>
+        <FormInput onChangeText={this.dummyfunction}/>
+        <FormValidationMessage>{'This field is required'}</FormValidationMessage>
+        */}
 
-      <Button
-      onPress={this.makeApiRequest}
-      title='Use Device Location'
-      />
+        <Text style={styles.paragraph}>
+          WHERE YOU AT?
+        </Text>
 
-      <View>
-      {this.renderDates()}
-      </View>
+        <Button
+        onPress={this.makeApiRequest}
+        title='Use Device Location'
+        />
+
+        <View>
+          {this.renderDates()}
+        </View>
       </View>
     );
   }
