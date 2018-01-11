@@ -1,11 +1,21 @@
 import React from 'react';
-import { View, Text, Button, Platform, StyleSheet } from 'react-native';
+import { View, Text, Button, Platform, StyleSheet, TextInput } from 'react-native';
 import Header from '../components/Header';
-import { FormLabel, FormInput, FormValidationMessage } from 'react-native-elements';
+import { FormLabel, FormInput, FormValidationMessage, SearchBar, Icon } from 'react-native-elements';
 import { Constants, Location, Permissions } from 'expo';
 import { GOOGLE_API_KEY } from 'react-native-dotenv';
 import axios from 'axios';
-import '../global'
+import '../global';
+
+const DateDetail = (props) => {
+  return (
+
+    <View>
+    <Text>{props.date.name}</Text>
+    </View>
+
+  );
+};
 
 export default class DateSearch extends React.Component {
 
@@ -13,9 +23,11 @@ export default class DateSearch extends React.Component {
     super();
     this.state = {
       location: null,
-      errorMessage: null
+      errorMessage: null,
+      dates: []
     };
-    this.submitFormData = this.submitFormData.bind(this);
+    this.makeApiRequest = this.makeApiRequest.bind(this);
+    this.renderDates = this.renderDates.bind(this);
   };
 
   componentWillMount() {
@@ -42,16 +54,24 @@ export default class DateSearch extends React.Component {
     console.log(`lng: ${location.coords.longitude}`);
   };
 
-  submitFormData() {
+  makeApiRequest() {
     let url = `${placesSearchBaseURL}${this.state.location.coords.latitude},${this.state.location.coords.longitude}&radius=500&key=${GOOGLE_API_KEY}`;
     // will automatically be executed when component is about to be rendered
     console.log(url);
     axios.get(url)
     // updates dates piece of state
-    // .then(response => this.setState({ dates: response.data.records}));
-    .then(response => console.log(response));
-    console.log('pressed the button');
+    .then(response => this.setState({ dates: response.data.results }));
+    // .then(response => console.log(response));
+    // console.log('pressed the button');
   };
+
+  renderDates() {
+    let renderedDates = this.state.dates.map(date =>
+      <DateDetail key={date.id} date={date} />
+    );
+    console.log(renderedDates);
+    return renderedDates;
+  }
 
   dummyfunction() {
     // can use for autocomplete
@@ -59,28 +79,73 @@ export default class DateSearch extends React.Component {
   };
 
   render() {
-    let text = 'Waiting..';
-    if (this.state.errorMessage) {
-      text = this.state.errorMessage;
-    } else if (this.state.location) {
-      text = JSON.stringify(this.state.location);
-      console.log(text);
-    }
 
     return (
       <View>
       <Header headerText={'Soiree'} />
       {this.props.children}
+
+      {/* TODO: this is to put a location search icon in seach bar, currently returns error: unrecognized font family 'Material Icons'*/}
+      {/*<View style={styles.searchSection}>
+      <Icon style={styles.searchIcon} name="ios-search" size={20} color="#000"/>
+      <TextInput
+      style={styles.input}
+      placeholder="User Nickname"
+      onChangeText={(searchString) => {this.setState({searchString})}}
+      underlineColorAndroid="transparent"
+      />
+      </View>*/}
+
       <FormLabel>Where You At?</FormLabel>
+      <View></View>
       <FormInput onChangeText={this.dummyfunction}/>
       <FormValidationMessage>{'This field is required'}</FormValidationMessage>
-
       <Button
-      onPress={this.submitFormData}
-      title='Submit'
+      onPress={this.makeApiRequest}
+      title='Use Device Location'
       />
-
+      <View>
+      {this.renderDates()}
+      </View>
       </View>
     );
   }
 }
+
+{/*const styles = {
+  searchSection: {
+  flex: 1,
+  flexDirection: 'row',
+  justifyContent: 'center',
+  alignItems: 'center',
+  backgroundColor: '#fff',
+},
+searchIcon: {
+padding: 10,
+},
+input: {
+flex: 1,
+paddingTop: 10,
+paddingRight: 10,
+paddingBottom: 10,
+paddingLeft: 0,
+backgroundColor: '#fff',
+color: '#424242',
+},
+};
+*/}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingTop: Constants.statusBarHeight,
+    backgroundColor: '#ecf0f1',
+  },
+  paragraph: {
+    margin: 24,
+    fontSize: 18,
+    textAlign: 'center',
+  },
+});
