@@ -28,7 +28,7 @@ export const StackNav = StackNavigator({
   Home: {
     screen: MyHomeScreen,
     navigationOptions: {
-      title: 'Home',
+      title: 'Soirée',
     }
   },
   DateSearch: {
