@@ -82,28 +82,22 @@ export default class DateSearch extends React.Component {
 
     return (
       <View>
-      
+
       {this.props.children}
 
-      {/* TODO: this is to put a location search icon in seach bar, currently returns error: unrecognized font family 'Material Icons'*/}
-      {/*<View style={styles.searchSection}>
-      <Icon style={styles.searchIcon} name="ios-search" size={20} color="#000"/>
-      <TextInput
-      style={styles.input}
-      placeholder="User Nickname"
-      onChangeText={(searchString) => {this.setState({searchString})}}
-      underlineColorAndroid="transparent"
-      />
-      </View>*/}
-
-      <FormLabel>Where You At?</FormLabel>
+      {// location input form
+        /*<FormLabel>Where You At?</FormLabel>
       <View></View>
       <FormInput onChangeText={this.dummyfunction}/>
       <FormValidationMessage>{'This field is required'}</FormValidationMessage>
+      */}
+      <Text style={styles.paragraph}>WHERE YOU AT?</Text>
+
       <Button
       onPress={this.makeApiRequest}
       title='Use Device Location'
       />
+
       <View>
       {this.renderDates()}
       </View>
@@ -111,29 +105,6 @@ export default class DateSearch extends React.Component {
     );
   }
 }
-
-{/*const styles = {
-  searchSection: {
-  flex: 1,
-  flexDirection: 'row',
-  justifyContent: 'center',
-  alignItems: 'center',
-  backgroundColor: '#fff',
-},
-searchIcon: {
-padding: 10,
-},
-input: {
-flex: 1,
-paddingTop: 10,
-paddingRight: 10,
-paddingBottom: 10,
-paddingLeft: 0,
-backgroundColor: '#fff',
-color: '#424242',
-},
-};
-*/}
 
 const styles = StyleSheet.create({
   container: {
@@ -145,7 +116,7 @@ const styles = StyleSheet.create({
   },
   paragraph: {
     margin: 24,
-    fontSize: 18,
+    fontSize: 36,
     textAlign: 'center',
   },
 });
