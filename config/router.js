@@ -9,8 +9,6 @@ import Header from '../src/components/Header';
 
 const MyHomeScreen = ({ navigation }) => (
   <ScrollView>
-
-    <Header headerText={'Soiree'} />
     <Button
       onPress={() => navigation.navigate('DateSearch', { name: 'Date Search'})}
       title="Date Search"
@@ -29,11 +27,20 @@ const MyHomeScreen = ({ navigation }) => (
 export const StackNav = StackNavigator({
   Home: {
     screen: MyHomeScreen,
+    navigationOptions: {
+      title: 'Home',
+    }
   },
   DateSearch: {
     screen: DateSearch,
+    navigationOptions: {
+      title: 'Date Search',
+    }
   },
   Results: {
     screen: Results,
+    navigationOptions: {
+      title: 'Results',
+    }
   },
 });
