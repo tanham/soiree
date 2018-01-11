@@ -8,7 +8,6 @@ class Results extends Component {
   render() {
     return (
       <ScrollView>
-        <Header headerText={'Soiree'} />
 
         <Text>Results Page</Text>
 

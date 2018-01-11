@@ -82,7 +82,7 @@ export default class DateSearch extends React.Component {
 
     return (
       <View>
-      <Header headerText={'Soiree'} />
+      
       {this.props.children}
 
       {/* TODO: this is to put a location search icon in seach bar, currently returns error: unrecognized font family 'Material Icons'*/}
