@@ -3,7 +3,7 @@ import { ScrollView, Button } from 'react-native';
 import { TabNavigator, StackNavigator } from 'react-navigation';
 import { Icon } from 'react-native-elements';
 import Home from '../src/screens/Home';
-import Results from '../src/screens/Results';
+import CuratedResults from '../src/screens/CuratedResults';
 import DateSearch from '../src/screens/DateSearch';
 import Header from '../src/components/Header';
 
@@ -17,7 +17,7 @@ const MyHomeScreen = ({ navigation }) => (
     <Home />
 
     <Button
-      onPress={() => navigation.navigate('Results', { name: 'Results'})}
+      onPress={() => navigation.navigate('CuratedResults', { name: 'Results'})}
       title="See More"
     />
 
@@ -37,8 +37,8 @@ export const StackNav = StackNavigator({
       title: 'Date Search',
     }
   },
-  Results: {
-    screen: Results,
+  CuratedResults: {
+    screen: CuratedResults,
     navigationOptions: {
       title: 'Results',
     }

@@ -4,7 +4,7 @@ import { Tile, List, ListItem, Button } from 'react-native-elements';
 import Header from '../components/Header';
 import DatesList from '../components/DatesList';
 
-class Results extends Component {
+class CuratedResults extends Component {
   render() {
     return (
       <ScrollView>
@@ -19,4 +19,4 @@ class Results extends Component {
   }
 }
 
-export default Results;
+export default CuratedResults;
