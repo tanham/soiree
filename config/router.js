@@ -1,11 +1,13 @@
 import React from 'react';
-import { ScrollView, Button } from 'react-native';
+import { ScrollView, Button, View } from 'react-native';
 import { TabNavigator, StackNavigator } from 'react-navigation';
 import { Icon } from 'react-native-elements';
 import Home from '../src/screens/Home';
 import CuratedResults from '../src/screens/CuratedResults';
 import DateSearch from '../src/screens/DateSearch';
 import Header from '../src/components/Header';
+import StatelessResults from '../src/screens/StatelessResults';
+
 
 const MyHomeScreen = ({ navigation }) => (
   <ScrollView>
@@ -24,6 +26,12 @@ const MyHomeScreen = ({ navigation }) => (
   </ScrollView>
 );
 
+const DateSearchScreen = ({ navigation }) => (
+  <View>
+    <DateSearch />
+  </View>
+);
+
 export const StackNav = StackNavigator({
   Home: {
     screen: MyHomeScreen,
@@ -32,7 +40,7 @@ export const StackNav = StackNavigator({
     }
   },
   DateSearch: {
-    screen: DateSearch,
+    screen: DateSearchScreen,
     navigationOptions: {
       title: 'Date Search',
     }
@@ -43,4 +51,10 @@ export const StackNav = StackNavigator({
       title: 'Results',
     }
   },
+  StatelessResults: {
+    screen: StatelessResults,
+    navigationOptions: {
+      title: 'Results',
+    }
+  }
 });

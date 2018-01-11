@@ -77,7 +77,7 @@ export default class DateSearch extends React.Component {
     return (
       <View>
 
-        {this.props.children}
+        {/*{this.props.children}*/}
 
         {// location input form
           /*<FormLabel>Where You At?</FormLabel>
