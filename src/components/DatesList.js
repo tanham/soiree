@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View } from 'react-native';
 import axios from 'axios';
 import DateDetail from './DateDetail';
+import DateSearch from '../screens/DateSearch';
 
 class DatesList extends Component {
   // TODO: consider changing the name from dates to activities or outings
@@ -26,7 +27,8 @@ class DatesList extends Component {
       <DateDetail key={date.id} date={date} />
     );
 
-    return renderedDates.slice(0,4);
+    return renderedDates
+    // .slice(0,4);
   }
 
   render() {

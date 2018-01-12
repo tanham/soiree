@@ -17,8 +17,8 @@ const DateDetail = (props) => {
 
 export default class DateSearch extends React.Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       location: null,
       errorMessage: null,
@@ -77,7 +77,7 @@ export default class DateSearch extends React.Component {
     return (
       <View>
 
-        {/*{this.props.children}*/}
+        {this.props.children}
 
         {// location input form
           /*<FormLabel>Where You At?</FormLabel>

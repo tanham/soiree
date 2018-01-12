@@ -26,9 +26,15 @@ const MyHomeScreen = ({ navigation }) => (
   </ScrollView>
 );
 
-const DateSearchScreen = ({ navigation }) => (
+const DateSearchScreen = ({ navigation }, props) => (
   <View>
-    <DateSearch />
+    <DateSearch>
+    <View>
+      {/*{this.renderDates()}*/}
+      {console.log(`props: ${JSON.stringify(props)}`)}
+    </View>
+    </DateSearch>
+
   </View>
 );
 
