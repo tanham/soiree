@@ -52,7 +52,7 @@ export default class DateSearch extends React.Component {
   };
 
   makeApiRequest() {
-    let url = `${placesSearchBaseURL}${this.state.location.coords.latitude},${this.state.location.coords.longitude}&radius=500&key=${GOOGLE_API_KEY}`;
+    let url = `${placesSearchBaseURL}${this.state.location.coords.latitude},${this.state.location.coords.longitude}&radius=500&key=${GOOGLE_API_KEY}&types=restaurant`;
     // will automatically be executed when component is about to be rendered
     axios.get(url)
     // updates dates piece of state
