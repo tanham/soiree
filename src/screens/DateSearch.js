@@ -86,15 +86,7 @@ export default class DateSearch extends React.Component {
         <FormValidationMessage>{'This field is required'}</FormValidationMessage>
         */}
 
-        <Text style={styles.paragraph}>
-          WHERE YOU AT?
-        </Text>
-
-        <Button
-        onPress={this.makeApiRequest}
-        title='Use Device Location'
-        />
-
+    
         <View>
           {this.renderDates()}
         </View>

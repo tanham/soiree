@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, Button, View } from 'react-native';
+import { ScrollView, Button, View, Text } from 'react-native';
 import { TabNavigator, StackNavigator } from 'react-navigation';
 import { Icon } from 'react-native-elements';
 import Home from '../src/screens/Home';
@@ -26,14 +26,20 @@ const MyHomeScreen = ({ navigation }) => (
   </ScrollView>
 );
 
+const MyResults = () => (
+  <Text>HIYA</Text>
+);
+
 const DateSearchScreen = ({ navigation }, props) => (
   <View>
-    <DateSearch>
-    <View>
-      {/*{this.renderDates()}*/}
-      {console.log(`props: ${JSON.stringify(props)}`)}
-    </View>
-    </DateSearch>
+  <Text>
+    WHERE YOU AT?
+  </Text>
+
+  <Button
+  onPress={() => navigation.navigate('StatelessResults', { name: 'Results'})}
+  title='Use Device Location'
+  />
 
   </View>
 );
@@ -60,7 +66,7 @@ export const StackNav = StackNavigator({
     }
   },
   StatelessResults: {
-    screen: StatelessResults,
+    screen: MyResults,
     navigationOptions: {
       title: 'Results',
     }
