@@ -38,6 +38,8 @@ const DateSearchScreen = ({ navigation }, props) => (
   </View>
 );
 
+{/*const ResultsScreen = ({ navigation } => ();*/}
+
 export const StackNav = StackNavigator({
   Home: {
     screen: MyHomeScreen,

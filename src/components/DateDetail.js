@@ -8,7 +8,7 @@ const DateDetail = (props) => {
     <Card>
       <CardSection>
         <View style={styles.headerContentStyle}>
-          <Text onPress={console.log(props)}>{props.date.fields.Name}</Text>
+          <Text>{props.date.fields.Name}</Text>
           <Text>Some location</Text>
         </View>
       </CardSection>
