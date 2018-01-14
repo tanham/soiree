@@ -1,46 +1,46 @@
 import React from 'react';
-import { ScrollView, Button, View } from 'react-native';
+import { ScrollView, Button, View, Text } from 'react-native';
 import { TabNavigator, StackNavigator } from 'react-navigation';
 import { Icon } from 'react-native-elements';
 import Home from '../src/screens/Home';
 import CuratedResults from '../src/screens/CuratedResults';
 import DateSearch from '../src/screens/DateSearch';
 import Header from '../src/components/Header';
-import StatelessResults from '../src/screens/StatelessResults';
 
 
 const MyHomeScreen = ({ navigation }) => (
+  debugger;
   <ScrollView>
-    <Button
-      onPress={() => navigation.navigate('DateSearch', { name: 'Date Search'})}
-      title="Date Search"
-    />
+  <Button
+  onPress={() => navigation.navigate('DateSearch', { name: 'Date Search'})}
+  title="Date Search"
+  />
 
-    <Home />
+  <Home />
 
-    <Button
-      onPress={() => navigation.navigate('CuratedResults', { name: 'Results'})}
-      title="See More"
-    />
+  <Button
+  onPress={() => navigation.navigate('CuratedResults', { name: 'Results'})}
+  title="See More"
+  />
 
   </ScrollView>
 );
 
 const DateSearchScreen = ({ navigation }, props) => (
-  <View>
-    <DateSearch>
-    <View>
-      {/*{this.renderDates()}*/}
-      {console.log(`props: ${JSON.stringify(props)}`)}
-    </View>
-    </DateSearch>
+  <Text>WHERE YOU AT?</Text>
 
-  </View>
+  <Button
+  onPress={() => navigation.navigate('StatelessResults', { name: 'StatelessResults'})}
+  title='Use Device Location'
+  />
 );
 
-{/*const ResultsScreen = ({ navigation } => ();*/}
+const ResultsScreen = ({ navigation }) => (
+  </DateSearch>
+);
 
 export const StackNav = StackNavigator({
+  debugger;
   Home: {
     screen: MyHomeScreen,
     navigationOptions: {
@@ -60,7 +60,7 @@ export const StackNav = StackNavigator({
     }
   },
   StatelessResults: {
-    screen: StatelessResults,
+    screen: ResultsScreen,
     navigationOptions: {
       title: 'Results',
     }

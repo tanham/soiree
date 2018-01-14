@@ -36,6 +36,8 @@ export default class DateSearch extends React.Component {
     } else {
       this._getLocationAsync();
     }
+
+    makeApiRequest();
   }
 
   _getLocationAsync = async () => {
@@ -86,7 +88,7 @@ export default class DateSearch extends React.Component {
         <FormValidationMessage>{'This field is required'}</FormValidationMessage>
         */}
 
-        <Text style={styles.paragraph}>
+        {/*<Text style={styles.paragraph}>
           WHERE YOU AT?
         </Text>
 
@@ -94,7 +96,7 @@ export default class DateSearch extends React.Component {
         onPress={this.makeApiRequest}
         title='Use Device Location'
         />
-
+*/}
         <View>
           {this.renderDates()}
         </View>
