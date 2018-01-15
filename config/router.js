@@ -7,7 +7,7 @@ import CuratedResults from '../src/screens/CuratedResults';
 import DateSearch from '../src/screens/DateSearch';
 import Header from '../src/components/Header';
 import StatelessResults from '../src/screens/StatelessResults';
-
+import Dates from '../src/components/Dates';
 
 const MyHomeScreen = ({ navigation }) => (
   <ScrollView>
@@ -26,8 +26,10 @@ const MyHomeScreen = ({ navigation }) => (
   </ScrollView>
 );
 
-const MyResults = () => (
-  <Text>HIYA</Text>
+const MyResults = (props) => (
+  <ScrollView>
+  <Text>Click me</Text>
+  </ScrollView>
 );
 
 const DateSearchScreen = ({ navigation }, props) => (
@@ -43,8 +45,6 @@ const DateSearchScreen = ({ navigation }, props) => (
 
   </View>
 );
-
-{/*const ResultsScreen = ({ navigation } => ();*/}
 
 export const StackNav = StackNavigator({
   Home: {

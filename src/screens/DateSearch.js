@@ -19,6 +19,7 @@ export default class DateSearch extends React.Component {
 
   constructor(props) {
     super(props);
+    this.handleClick = this.handleClick.bind(this);
     this.state = {
       location: null,
       errorMessage: null,
@@ -28,6 +29,9 @@ export default class DateSearch extends React.Component {
     this.renderDates = this.renderDates.bind(this);
   };
 
+  handleClick() {
+    console.log('yaassssss!');
+  };
   componentWillMount() {
     if (Platform.OS === 'android' && !Constants.isDevice) {
       this.setState({
@@ -36,7 +40,7 @@ export default class DateSearch extends React.Component {
     } else {
       this._getLocationAsync();
     }
-  }
+  };
 
   _getLocationAsync = async () => {
     let { status } = await Permissions.askAsync(Permissions.LOCATION);
@@ -51,7 +55,7 @@ export default class DateSearch extends React.Component {
     console.log(`lat: ${location.coords.latitude},lng: ${location.coords.longitude}`);
   };
 
-  makeApiRequest() {
+  makeApiRequest(props) {
     let url = `${placesSearchBaseURL}${this.state.location.coords.latitude},${this.state.location.coords.longitude}&radius=500&key=${GOOGLE_API_KEY}&types=restaurant`;
     // will automatically be executed when component is about to be rendered
     axios.get(url)
@@ -77,8 +81,8 @@ export default class DateSearch extends React.Component {
     return (
       <View>
 
-        {this.props.children}
-
+        {/*{this.props.children}*/}
+        {console.log(this)}
         {// location input form
           /*<FormLabel>Where You At?</FormLabel>
         <View></View>
@@ -86,7 +90,6 @@ export default class DateSearch extends React.Component {
         <FormValidationMessage>{'This field is required'}</FormValidationMessage>
         */}
 
-    
         <View>
           {this.renderDates()}
         </View>
