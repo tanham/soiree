@@ -4,13 +4,21 @@ import Card from './Card';
 import CardSection from './CardSection';
 
 const DateDetail = (props) => {
+
+
   return (
     <Card>
       <CardSection>
         <View style={styles.headerContentStyle}>
-          <Text>{props.date.fields.Name}</Text>
+          <Text style={styles.headerTextStyle}>{props.date.fields.Name}</Text>
           <Text>Some location</Text>
         </View>
+      </CardSection>
+      <CardSection>
+        <Image
+          style={styles.imageStyle}
+          source={{ uri : 'http://clipartix.com/wp-content/uploads/2016/04/Hearts-heart-clipart.png'}}
+        />
       </CardSection>
 
     </Card>
@@ -20,7 +28,15 @@ const DateDetail = (props) => {
 const styles = {
   headerContentStyle: {
     flexDirection: 'column',
-    justifyContent: 'space-around'
+    justifyContent: 'space-around',
+  },
+  headerTextStyle: {
+    fontSize: 18,
+  },
+  imageStyle: {
+    height: 200,
+    flex: 1,
+    width: null
   }
 };
 
