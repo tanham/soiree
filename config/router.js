@@ -8,6 +8,7 @@ import DateSearch from '../src/screens/DateSearch';
 import Header from '../src/components/Header';
 import StatelessResults from '../src/screens/StatelessResults';
 import Dates from '../src/components/Dates';
+import CustomButton from '../src/components/CustomButton';
 
 const MyHomeScreen = ({ navigation }) => (
   <ScrollView>
@@ -29,9 +30,7 @@ const MyHomeScreen = ({ navigation }) => (
 const MyResults = (props) => (
   <ScrollView>
   <Text>Results Page</Text>
-  <DateSearch>
-
-  </DateSearch>
+  <DateSearch />
   </ScrollView>
 );
 
@@ -43,9 +42,12 @@ const DateSearchScreen = ({ navigation }, {makeApiRequest}) => (
 
   <Button
   onPress={() => navigation.navigate('StatelessResults', { name: 'Results'})}
-  onPress={() => console.log('pressed')}
   title='Use Device Location'
   />
+
+  <CustomButton onPress={()=> console.log('pressed the custom button')}>
+    Click it
+  </CustomButton>
 
   </View>
 );

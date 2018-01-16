@@ -22,7 +22,9 @@ const DateDetail = (props) => {
         />
       </CardSection>
       <CardSection>
-        <CustomButton onPress={() => console.log(props.date.fields.Name)}/>
+        <CustomButton onPress={() => console.log(props.date.fields.Name)}>
+          Click Me
+        </CustomButton>
       </CardSection>
 
     </Card>

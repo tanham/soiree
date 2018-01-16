@@ -10,7 +10,7 @@ import '../global';
 const DateDetail = (props) => {
   return (
     <View>
-      <Text>{props.date.name}</Text>
+    <Text>{props.date.name}</Text>
     </View>
   );
 };
@@ -40,6 +40,7 @@ export default class DateSearch extends React.Component {
     } else {
       this._getLocationAsync();
     }
+
   };
 
   _getLocationAsync = async () => {
@@ -78,21 +79,18 @@ export default class DateSearch extends React.Component {
   };
 
   render() {
+
+
     return (
       <View>
+      {/* I want this function to trigger on load instead of on press but as it stands now, ajax is making it so, onLoad location is still null.*/}
+      <Button
+      onPress={this.makeApiRequest}
+      title='see results'
+      />
 
-        {/*{this.props.children}*/}
-        {console.log(this)}
-        {// location input form
-          /*<FormLabel>Where You At?</FormLabel>
-        <View></View>
-        <FormInput onChangeText={this.dummyfunction}/>
-        <FormValidationMessage>{'This field is required'}</FormValidationMessage>
-        */}
+      {this.renderDates()}
 
-        <View>
-          {this.renderDates()}
-        </View>
       </View>
     );
   }
