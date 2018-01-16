@@ -1,17 +1,50 @@
 import React from 'react';
-import { View, Text, Button, Platform, StyleSheet, TextInput } from 'react-native';
+import { View,
+          Text,
+          Button,
+          Platform,
+          StyleSheet,
+          TextInput,
+          Image } from 'react-native';
+import { FormLabel,
+        FormInput,
+        FormValidationMessage,
+        SearchBar,
+        Icon } from 'react-native-elements';
+import { Constants,
+          Location,
+          Permissions } from 'expo';
 import Header from '../components/Header';
-import { FormLabel, FormInput, FormValidationMessage, SearchBar, Icon } from 'react-native-elements';
-import { Constants, Location, Permissions } from 'expo';
 import { GOOGLE_API_KEY } from 'react-native-dotenv';
-import axios from 'axios';
 import '../global';
+import axios from 'axios';
+import Card from '../components/Card';
+import CardSection from '../components/CardSection';
+import CustomButton from '../components/CustomButton';
+
 
 const DateDetail = (props) => {
   return (
-    <View>
-    <Text>{props.date.name}</Text>
-    </View>
+    <Card>
+      <CardSection>
+        <View style={styles.headerContentStyle}>
+          <Text style={styles.headerTextStyle}>{props.date.name}</Text>
+          <Text>{props.date.vicinity}</Text>
+        </View>
+      </CardSection>
+      <CardSection>
+        <Image
+          style={styles.imageStyle}
+          source={{ uri : 'http://clipartix.com/wp-content/uploads/2016/04/Hearts-heart-clipart.png'}}
+        />
+      </CardSection>
+      <CardSection>
+        <CustomButton onPress={() => console.log(props.date.name)}>
+          Click Me
+        </CustomButton>
+      </CardSection>
+
+    </Card>
   );
 };
 
