@@ -22,7 +22,7 @@ const DateDetail = (props) => {
         />
       </CardSection>
       <CardSection>
-        <Button />
+        <Button onPress={() => console.log(props.date.fields.Name)}/>
       </CardSection>
 
     </Card>
