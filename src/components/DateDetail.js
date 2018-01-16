@@ -6,7 +6,6 @@ import CustomButton from './CustomButton';
 
 const DateDetail = (props) => {
 
-
   return (
     <Card>
       <CardSection>
