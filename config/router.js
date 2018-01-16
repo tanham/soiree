@@ -46,7 +46,7 @@ const DateSearchScreen = ({ navigation }, {makeApiRequest}) => (
   />
 
   <CustomButton onPress={()=> console.log('pressed the custom button')}>
-    Click it
+    Custom Button
   </CustomButton>
 
   </View>
