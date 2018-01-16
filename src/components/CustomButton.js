@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, TouchableOpacity } from 'react-native';
 
-const Button = ( {onPress} ) => {
+const CustomButton = ( {onPress} ) => {
   const { buttonStyle, textStyle } = styles;
 
   return (
@@ -34,4 +34,4 @@ const styles = {
     paddingBottom: 10
   }
 };
-export default Button;
+export default CustomButton;

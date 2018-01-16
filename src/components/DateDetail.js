@@ -2,7 +2,7 @@ import React from 'react';
 import { Text, View, Image } from 'react-native';
 import Card from './Card';
 import CardSection from './CardSection';
-import Button from './Button';
+import CustomButton from './CustomButton';
 
 const DateDetail = (props) => {
 
@@ -22,7 +22,7 @@ const DateDetail = (props) => {
         />
       </CardSection>
       <CardSection>
-        <Button onPress={() => console.log(props.date.fields.Name)}/>
+        <CustomButton onPress={() => console.log(props.date.fields.Name)}/>
       </CardSection>
 
     </Card>

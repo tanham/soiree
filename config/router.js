@@ -28,11 +28,14 @@ const MyHomeScreen = ({ navigation }) => (
 
 const MyResults = (props) => (
   <ScrollView>
-  <Text>Click me</Text>
+  <Text>Results Page</Text>
+  <DateSearch>
+
+  </DateSearch>
   </ScrollView>
 );
 
-const DateSearchScreen = ({ navigation }, props) => (
+const DateSearchScreen = ({ navigation }, {makeApiRequest}) => (
   <View>
   <Text>
     WHERE YOU AT?
@@ -40,6 +43,7 @@ const DateSearchScreen = ({ navigation }, props) => (
 
   <Button
   onPress={() => navigation.navigate('StatelessResults', { name: 'Results'})}
+  onPress={() => console.log('pressed')}
   title='Use Device Location'
   />
 
