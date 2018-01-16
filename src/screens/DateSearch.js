@@ -14,7 +14,6 @@ import { FormLabel,
 import { Constants,
           Location,
           Permissions } from 'expo';
-import Header from '../components/Header';
 import { GOOGLE_API_KEY } from 'react-native-dotenv';
 import '../global';
 import axios from 'axios';
