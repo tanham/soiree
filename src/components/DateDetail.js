@@ -2,6 +2,7 @@ import React from 'react';
 import { Text, View, Image } from 'react-native';
 import Card from './Card';
 import CardSection from './CardSection';
+import Button from './Button';
 
 const DateDetail = (props) => {
 
@@ -19,6 +20,9 @@ const DateDetail = (props) => {
           style={styles.imageStyle}
           source={{ uri : 'http://clipartix.com/wp-content/uploads/2016/04/Hearts-heart-clipart.png'}}
         />
+      </CardSection>
+      <CardSection>
+        <Button />
       </CardSection>
 
     </Card>
