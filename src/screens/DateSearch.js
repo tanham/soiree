@@ -29,7 +29,7 @@ const DateDetail = (props) => {
       <CardSection>
         <View style={styles.headerContentStyle}>
           <Text style={styles.headerTextStyle}>{props.date.name}</Text>
-          <Text>Some location</Text>
+          <Text>{props.date.vicinity}</Text>
         </View>
       </CardSection>
       <CardSection>
