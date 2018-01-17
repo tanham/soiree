@@ -63,11 +63,6 @@ class Home extends Component {
         </CardSection>
         </View>
 
-
-
-
-
-        <DatesList />
       </ScrollView>
 
     );
