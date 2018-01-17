@@ -12,7 +12,7 @@ import CustomButton from '../src/components/CustomButton';
 
 const MyHomeScreen = ({ navigation }) => (
   <ScrollView>
-  
+
     <CustomButton
       onPress={() => navigation.navigate('DateSearch', { name: 'Date Search'})}
       >
@@ -21,10 +21,6 @@ const MyHomeScreen = ({ navigation }) => (
 
     <Home />
 
-    <Button
-      onPress={() => navigation.navigate('CuratedResults', { name: 'Results'})}
-      title="See More"
-    />
 
   </ScrollView>
 );
