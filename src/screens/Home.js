@@ -15,10 +15,10 @@ class Home extends Component {
 
         <View style={{flexDirection: 'row', }}>
           <CardSection>
-            <TouchableOpacity onPress={() =>console.log("it's happening")}>
+            <TouchableOpacity style={{width: 160, height: 160 }} onPress={() =>console.log("it's happening")}>
               <Text style={{textAlign: 'center', // <-- the magic
                             fontWeight: 'bold',
-                            fontSize: 48,
+                            fontSize: 32,
                             marginTop: 100,
                             }}>
               Eats
@@ -27,10 +27,10 @@ class Home extends Component {
           </CardSection>
 
           <CardSection>
-            <TouchableOpacity onPress={() =>console.log("it's happening")}>
+            <TouchableOpacity style={{width: 160, height: 160 }} onPress={() =>console.log("it's happening")}>
               <Text style={{textAlign: 'center', // <-- the magic
                             fontWeight: 'bold',
-                            fontSize: 48,
+                            fontSize: 32,
                             marginTop: 100,}}>
               Active
               </Text>
@@ -40,10 +40,10 @@ class Home extends Component {
 
         <View style={{flexDirection: 'row'}}>
         <CardSection>
-        <TouchableOpacity onPress={() =>console.log("it's happening")}>
+        <TouchableOpacity style={{width: 160, height: 160 }} onPress={() =>console.log("it's happening")}>
           <Text style={{textAlign: 'center', // <-- the magic
                         fontWeight: 'bold',
-                        fontSize: 48,
+                        fontSize: 32,
                         marginTop: 100,}}>
           Live
           </Text>
@@ -52,10 +52,10 @@ class Home extends Component {
 
 
         <CardSection>
-        <TouchableOpacity onPress={() =>console.log("it's happening")}>
+        <TouchableOpacity style={{width: 160, height: 160 }} onPress={() =>console.log("it's happening")}>
           <Text style={{textAlign: 'center', // <-- the magic
                         fontWeight: 'bold',
-                        fontSize: 48,
+                        fontSize: 32,
                         marginTop: 100,}}>
           Random
           </Text>
