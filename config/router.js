@@ -12,10 +12,12 @@ import CustomButton from '../src/components/CustomButton';
 
 const MyHomeScreen = ({ navigation }) => (
   <ScrollView>
-    <Button
+  
+    <CustomButton
       onPress={() => navigation.navigate('DateSearch', { name: 'Date Search'})}
-      title="Date Search"
-    />
+      >
+      Create Your Own Experience!
+    </CustomButton>
 
     <Home />
 
