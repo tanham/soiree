@@ -21,7 +21,9 @@ const MyHomeScreen = ({ navigation }) => (
 
     <View style={{flexDirection: 'row', }}>
     <CustomButton style={{width: 160, height: 160 }}>
-    <Text style={{textAlign: 'center',
+    <Text
+      onPress={() => navigation.navigate('CuratedResults', { name: 'Dates'})}
+      style={{textAlign: 'center',
                   fontWeight: 'bold',
                   fontSize: 32,
                   marginTop: 100,
@@ -31,7 +33,9 @@ const MyHomeScreen = ({ navigation }) => (
     </CustomButton>
 
     <CustomButton style={{width: 160, height: 160 }}>
-    <Text style={{textAlign: 'center',
+    <Text
+      onPress={() => navigation.navigate('CuratedResults', { name: 'Dates'})}
+      style={{textAlign: 'center',
                   fontWeight: 'bold',
                   fontSize: 32,
                   marginTop: 100,
@@ -43,7 +47,9 @@ const MyHomeScreen = ({ navigation }) => (
 
     <View style={{flexDirection: 'row', }}>
     <CustomButton style={{width: 160, height: 160 }}>
-    <Text style={{textAlign: 'center',
+    <Text
+    onPress={() => navigation.navigate('CuratedResults', { name: 'Dates'})}
+    style={{textAlign: 'center',
                   fontWeight: 'bold',
                   fontSize: 32,
                   marginTop: 100,
@@ -53,7 +59,9 @@ const MyHomeScreen = ({ navigation }) => (
     </CustomButton>
 
     <CustomButton style={{width: 160, height: 160 }}>
-    <Text style={{textAlign: 'center',
+    <Text
+    onPress={() => navigation.navigate('CuratedResults', { name: 'Dates'})}
+    style={{textAlign: 'center',
                   fontWeight: 'bold',
                   fontSize: 32,
                   marginTop: 100,
