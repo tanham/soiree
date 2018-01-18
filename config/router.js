@@ -79,7 +79,7 @@ const MyResults = (props) => (
   </ScrollView>
 );
 
-const DateSearchScreen = ({ navigation }, {makeApiRequest}) => (
+const DateSearchScreen = ({ navigation }) => (
   <View>
   <Text>
     WHERE YOU AT?
@@ -91,6 +91,12 @@ const DateSearchScreen = ({ navigation }, {makeApiRequest}) => (
   />
 
   </View>
+);
+
+const DateScreen = ({ navigation }) => (
+  <Text>
+    the date
+  </Text>
 );
 
 export const StackNav = StackNavigator({
@@ -116,6 +122,12 @@ export const StackNav = StackNavigator({
     screen: MyResults,
     navigationOptions: {
       title: 'Results',
+    }
+  },
+  DateScreen: {
+    screen: DateScreen,
+    navigationOptions: {
+      title: 'Date',
     }
   }
 });
