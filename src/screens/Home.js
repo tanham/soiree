@@ -8,9 +8,66 @@ import CardSection from '../components/Card';
 
 class Home extends Component {
   render() {
+    const { navigate } = this.props.navigation;
     return (
       <ScrollView>
-        <DatesList />
+      <CustomButton
+        onPress={() => navigate('DateSearch', { name: 'Date Search'})}
+        >
+        Create Your Own Experience!
+      </CustomButton>
+
+      <View style={{flexDirection: 'row', }}>
+      <CustomButton style={{width: 160, height: 160 }}>
+      <Text
+        onPress={() => navigate('DateScreen', { name: 'Dates'})}
+        style={{textAlign: 'center',
+                    fontWeight: 'bold',
+                    fontSize: 32,
+                    marginTop: 100,
+                    }}>
+      Eats
+      </Text>
+      </CustomButton>
+
+      <CustomButton style={{width: 160, height: 160 }}>
+      <Text
+        onPress={() => navigate('CuratedResults', { name: 'Dates'})}
+        style={{textAlign: 'center',
+                    fontWeight: 'bold',
+                    fontSize: 32,
+                    marginTop: 100,
+                    }}>
+      Active
+      </Text>
+      </CustomButton>
+      </View>
+
+      <View style={{flexDirection: 'row', }}>
+      <CustomButton style={{width: 160, height: 160 }}>
+      <Text
+      onPress={() => navigate('CuratedResults', { name: 'Dates'})}
+      style={{textAlign: 'center',
+                    fontWeight: 'bold',
+                    fontSize: 32,
+                    marginTop: 100,
+                    }}>
+      Live
+      </Text>
+      </CustomButton>
+
+      <CustomButton style={{width: 160, height: 160 }}>
+      <Text
+      onPress={() => navigate('CuratedResults', { name: 'Dates'})}
+      style={{textAlign: 'center',
+                    fontWeight: 'bold',
+                    fontSize: 32,
+                    marginTop: 100,
+                    }}>
+      Random
+      </Text>
+      </CustomButton>
+      </View>
       </ScrollView>
 
     );

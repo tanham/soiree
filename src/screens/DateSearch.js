@@ -112,13 +112,19 @@ export default class DateSearch extends React.Component {
 
   render() {
 
+    const { navigate } = this.props.navigation;
 
     return (
       <View>
       {/* I want this function to trigger on load instead of on press but as it stands now, ajax is making it so, onLoad location is still null.*/}
+
+      <Text>
+        WHERE YOU AT?
+      </Text>
+
       <Button
       onPress={this.makeApiRequest}
-      title='see results'
+      title='Use Device Location'
       />
 
       {this.renderDates()}
