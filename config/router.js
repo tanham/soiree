@@ -1,13 +1,10 @@
 import React from 'react';
 import { ScrollView, Button, View, Text } from 'react-native';
-import { TabNavigator, StackNavigator } from 'react-navigation';
-import { Icon } from 'react-native-elements';
+import { StackNavigator } from 'react-navigation';
 import Home from '../src/screens/Home';
 import CuratedResults from '../src/screens/CuratedResults';
 import DateSearch from '../src/screens/DateSearch';
-import Header from '../src/components/Header';
 import StatelessResults from '../src/screens/StatelessResults';
-import Dates from '../src/components/Dates';
 import CustomButton from '../src/components/CustomButton';
 
 const MyHomeScreen = ({ navigation }) => (
@@ -92,10 +89,6 @@ const DateSearchScreen = ({ navigation }, {makeApiRequest}) => (
   onPress={() => navigation.navigate('StatelessResults', { name: 'Results'})}
   title='Use Device Location'
   />
-
-  <CustomButton onPress={()=> console.log('pressed the custom button')}>
-    Custom Button
-  </CustomButton>
 
   </View>
 );
