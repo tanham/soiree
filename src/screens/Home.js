@@ -14,7 +14,6 @@ class Home extends Component {
         <Text style={{textAlign: 'center'}}>
         Featued Lists</Text>
 
-
         <View style={{flexDirection: 'row', }}>
           <CardSection>
             <TouchableOpacity style={{width: 160, height: 160 }} onPress={() =>console.log("it's happening")}>

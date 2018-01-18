@@ -19,7 +19,49 @@ const MyHomeScreen = ({ navigation }) => (
       Create Your Own Experience!
     </CustomButton>
 
-    <Home />
+    <View style={{flexDirection: 'row', }}>
+    <CustomButton style={{width: 160, height: 160 }}>
+    <Text style={{textAlign: 'center', // <-- the magic
+                  fontWeight: 'bold',
+                  fontSize: 32,
+                  marginTop: 100,
+                  }}>
+    Eats
+    </Text>
+    </CustomButton>
+
+    <CustomButton style={{width: 160, height: 160 }}>
+    <Text style={{textAlign: 'center', // <-- the magic
+                  fontWeight: 'bold',
+                  fontSize: 32,
+                  marginTop: 100,
+                  }}>
+    Active
+    </Text>
+    </CustomButton>
+    </View>
+
+    <View style={{flexDirection: 'row', }}>
+    <CustomButton style={{width: 160, height: 160 }}>
+    <Text style={{textAlign: 'center', // <-- the magic
+                  fontWeight: 'bold',
+                  fontSize: 32,
+                  marginTop: 100,
+                  }}>
+    Live
+    </Text>
+    </CustomButton>
+
+    <CustomButton style={{width: 160, height: 160 }}>
+    <Text style={{textAlign: 'center', // <-- the magic
+                  fontWeight: 'bold',
+                  fontSize: 32,
+                  marginTop: 100,
+                  }}>
+    Random
+    </Text>
+    </CustomButton>
+    </View>
 
 
   </ScrollView>
