@@ -10,8 +10,10 @@ class Home extends Component {
   render() {
     return (
       <ScrollView>
+
         <Text style={{textAlign: 'center'}}>
         Featued Lists</Text>
+
 
         <View style={{flexDirection: 'row', }}>
           <CardSection>
