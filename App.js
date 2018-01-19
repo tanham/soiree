@@ -7,13 +7,13 @@ import {
   ScrollView,
   Button
 } from 'react-native';
-
 import Header from './src/components/Header';
 import { StackNav } from './config/router';
 
 class App extends Component {
+
   render() {
-      return <StackNav /> ;
+    return <StackNav /> ;
   }
 }
 export default App;

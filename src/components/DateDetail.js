@@ -4,6 +4,7 @@ import Card from './Card';
 import CardSection from './CardSection';
 import CustomButton from './CustomButton';
 
+
 const DateDetail = (props) => {
 
   return (
@@ -37,6 +38,7 @@ const styles = {
   },
   headerTextStyle: {
     fontSize: 18,
+    fontFamily: 'Courier-Oblique'
   },
   imageStyle: {
     height: 200,
