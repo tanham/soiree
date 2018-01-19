@@ -5,6 +5,7 @@ import Header from '../components/Header';
 import DatesList from '../components/DatesList';
 import CustomButton from '../components/CustomButton';
 import CardSection from '../components/Card';
+import DateDetail from '../components/DateDetail';
 
 class Home extends Component {
   render() {

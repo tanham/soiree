@@ -7,12 +7,15 @@ import CustomButton from './CustomButton';
 class DateDetail extends Component {
 
   render(props) {
+
     return (
+
       <Card>
         <CardSection>
           <View style={styles.headerContentStyle}>
             <Text style={styles.headerTextStyle}>{this.props.date.fields.Name}</Text>
             <Text>Some location</Text>
+
           </View>
         </CardSection>
         <CardSection>
@@ -22,7 +25,7 @@ class DateDetail extends Component {
           />
         </CardSection>
         <CardSection>
-          <CustomButton onPress={() => console.log(props.date.fields.Name)}>
+          <CustomButton>
             Click Me
           </CustomButton>
         </CardSection>

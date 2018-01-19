@@ -6,6 +6,7 @@ import CuratedResults from '../src/screens/CuratedResults';
 import DateSearch from '../src/screens/DateSearch';
 import StatelessResults from '../src/screens/StatelessResults';
 import CustomButton from '../src/components/CustomButton';
+import DateDetail from '../src/components/DateDetail';
 
 const DateSearchScreen = ({ navigation }) => (
   <View>
@@ -57,5 +58,5 @@ export const StackNav = StackNavigator({
     navigationOptions: {
       title: 'Date',
     }
-  }
+  },
 });
