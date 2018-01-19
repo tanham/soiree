@@ -7,7 +7,7 @@ import DateSearch from '../src/screens/DateSearch';
 import StatelessResults from '../src/screens/StatelessResults';
 import CustomButton from '../src/components/CustomButton';
 import DateDetail from '../src/components/DateDetail';
-
+import SingleDate from '../src/screens/SingleDate';
 
 const DateScreen = ({ navigation }) => (
   <Text>
@@ -41,7 +41,7 @@ export const StackNav = StackNavigator({
     }
   },
   DateScreen: {
-    screen: DateScreen,
+    screen: SingleDate,
     navigationOptions: {
       title: 'Date',
     }

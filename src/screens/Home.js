@@ -8,6 +8,9 @@ import CardSection from '../components/Card';
 import DateDetail from '../components/DateDetail';
 
 class Home extends Component {
+  static navigationOptions = {
+   headerTintColor: '#0072BB',
+ };
   render() {
 
     const { navigate } = this.props.navigation;

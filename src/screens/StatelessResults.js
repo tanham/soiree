@@ -9,7 +9,6 @@ class StatelessResults extends Component {
       this.state = {};
   };
 
-
   render() {
     return (
       <Text>Results Page</Text>
