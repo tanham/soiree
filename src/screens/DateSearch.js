@@ -23,6 +23,9 @@ import CustomButton from '../components/CustomButton';
 
 
 const DateDetail = (props) => {
+
+  const { navigate } = props.navigation;
+
   return (
     <Card>
       <CardSection>
@@ -38,7 +41,9 @@ const DateDetail = (props) => {
         />
       </CardSection>
       <CardSection>
-        <CustomButton onPress={() => console.log(props.date.name)}>
+        <CustomButton
+        onPress={() => navigate('DateScreen', { name: 'Date'})}
+        >
           Click Me
         </CustomButton>
       </CardSection>
@@ -72,7 +77,6 @@ export default class DateSearch extends React.Component {
     } else {
       this._getLocationAsync();
     }
-
   };
 
   _getLocationAsync = async () => {
@@ -99,8 +103,9 @@ export default class DateSearch extends React.Component {
   };
 
   renderDates() {
+
     let renderedDates = this.state.dates.map(date =>
-      <DateDetail key={date.id} date={date} />
+      <DateDetail key={date.id} date={date} navigation={this.props.navigation} />
     );
     return renderedDates;
   }
@@ -111,8 +116,6 @@ export default class DateSearch extends React.Component {
   };
 
   render() {
-
-    const { navigate } = this.props.navigation;
 
     return (
       <View>

@@ -7,7 +7,7 @@ import CustomButton from './CustomButton';
 class DateDetail extends Component {
 
   render(props) {
-
+    console.log(this.props);
     return (
 
       <Card>

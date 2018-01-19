@@ -9,6 +9,7 @@ import DateDetail from '../components/DateDetail';
 
 class Home extends Component {
   render() {
+
     const { navigate } = this.props.navigation;
     return (
       <ScrollView>
