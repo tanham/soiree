@@ -11,7 +11,7 @@ class CuratedResults extends Component {
 
         <Text>Results Page</Text>
 
-        <DatesList />
+        <DatesList navigation={this.props.navigation}/>
 
       </ScrollView>
 

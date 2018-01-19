@@ -4,36 +4,37 @@ import Card from './Card';
 import CardSection from './CardSection';
 import CustomButton from './CustomButton';
 
-class DateDetail extends Component {
+// class DateDetail extends Component {
+const DateDetail = (props) => {
+  const { navigate } = props.navigation;
 
-  render(props) {
-    console.log(this.props);
-    return (
+  return (
+    <Card>
+    <CardSection>
+    <View style={styles.headerContentStyle}>
+    <Text style={styles.headerTextStyle}>{props.date.fields.Name}</Text>
+    <Text>Some location</Text>
 
-      <Card>
-        <CardSection>
-          <View style={styles.headerContentStyle}>
-            <Text style={styles.headerTextStyle}>{this.props.date.fields.Name}</Text>
-            <Text>Some location</Text>
+    </View>
+    </CardSection>
+    <CardSection>
+    <Image
+    style={styles.imageStyle}
+    source={{ uri : 'http://clipartix.com/wp-content/uploads/2016/04/Hearts-heart-clipart.png'}}
+    />
+    </CardSection>
+    <CardSection>
+    <CustomButton
+    onPress={() => navigate('DateScreen', { name: 'Date'})}
+    >
+    Click Me
+    </CustomButton>
+    </CardSection>
 
-          </View>
-        </CardSection>
-        <CardSection>
-          <Image
-            style={styles.imageStyle}
-            source={{ uri : 'http://clipartix.com/wp-content/uploads/2016/04/Hearts-heart-clipart.png'}}
-          />
-        </CardSection>
-        <CardSection>
-          <CustomButton>
-            Click Me
-          </CustomButton>
-        </CardSection>
-
-      </Card>
-    );
-  }
+    </Card>
+  );
 }
+
 
 const styles = {
   headerContentStyle: {

@@ -9,7 +9,11 @@ class DatesList extends Component {
 
   // set initial state for component
   // this is called a class level property, can also use a constructor or setInitialState - same thing
-  state = { dates: [] };
+
+  constructor(props) {
+    super(props);
+    this.state = { dates: [] };
+  };
 
   componentWillMount() {
     // will automatically be executed when component is about to be rendered
@@ -22,9 +26,11 @@ class DatesList extends Component {
   renderDates() {
     // react need a way to identify each child element to properly render, unique identifer as key, based on the content itself like a child element's id
     // wants to know which thing in the list to update
-
     let renderedDates = this.state.dates.map(date =>
-      <DateDetail key={date.id} date={date} />
+      <DateDetail
+        key={date.id}
+        date={date}
+        navigation={this.props.navigation} />
     );
 
     return renderedDates
@@ -32,7 +38,6 @@ class DatesList extends Component {
   }
 
   render() {
-    console.log(this.state.dates);
     return (
       <View>
           {this.renderDates()}

@@ -22,7 +22,7 @@ class Home extends Component {
       <View style={{flexDirection: 'row', }}>
       <CustomButton style={{width: 160, height: 160 }}>
       <Text
-        onPress={() => navigate('DateScreen', { name: 'Dates'})}
+        onPress={() => navigate('CuratedResults', { name: 'Dates'})}
         style={{textAlign: 'center',
                     fontWeight: 'bold',
                     fontSize: 32,
