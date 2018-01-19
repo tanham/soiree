@@ -21,9 +21,7 @@ import Card from '../components/Card';
 import CardSection from '../components/CardSection';
 import CustomButton from '../components/CustomButton';
 
-
 const DateDetail = (props) => {
-
   const { navigate } = props.navigation;
 
   return (
@@ -53,7 +51,6 @@ const DateDetail = (props) => {
 };
 
 export default class DateSearch extends React.Component {
-
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
@@ -69,6 +66,7 @@ export default class DateSearch extends React.Component {
   handleClick() {
     console.log('yaassssss!');
   };
+
   componentWillMount() {
     if (Platform.OS === 'android' && !Constants.isDevice) {
       this.setState({
@@ -103,9 +101,11 @@ export default class DateSearch extends React.Component {
   };
 
   renderDates() {
-
     let renderedDates = this.state.dates.map(date =>
-      <DateDetail key={date.id} date={date} navigation={this.props.navigation} />
+      <DateDetail
+        key={date.id}
+        date={date}
+        navigation={this.props.navigation} />
     );
     return renderedDates;
   }
@@ -116,22 +116,18 @@ export default class DateSearch extends React.Component {
   };
 
   render() {
-
     return (
       <View>
-      {/* I want this function to trigger on load instead of on press but as it stands now, ajax is making it so, onLoad location is still null.*/}
+        <Text>
+          WHERE YOU AT?
+        </Text>
 
-      <Text>
-        WHERE YOU AT?
-      </Text>
+        <Button
+        onPress={this.makeApiRequest}
+        title='Use Device Location'
+        />
 
-      <Button
-      onPress={this.makeApiRequest}
-      title='Use Device Location'
-      />
-
-      {this.renderDates()}
-
+        {this.renderDates()}
       </View>
     );
   }
