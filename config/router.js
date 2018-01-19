@@ -8,19 +8,6 @@ import StatelessResults from '../src/screens/StatelessResults';
 import CustomButton from '../src/components/CustomButton';
 import DateDetail from '../src/components/DateDetail';
 
-const DateSearchScreen = ({ navigation }) => (
-  <View>
-  <Text>
-    WHERE YOU AT?
-  </Text>
-
-  <Button
-  onPress={() => navigation.navigate('StatelessResults', { name: 'Results'})}
-  title='Use Device Location'
-  />
-
-  </View>
-);
 
 const DateScreen = ({ navigation }) => (
   <Text>
