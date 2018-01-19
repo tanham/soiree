@@ -1,28 +1,73 @@
 import React from 'react';
 import { ScrollView, Button, View, Text } from 'react-native';
-import { TabNavigator, StackNavigator } from 'react-navigation';
-import { Icon } from 'react-native-elements';
+import { StackNavigator } from 'react-navigation';
 import Home from '../src/screens/Home';
 import CuratedResults from '../src/screens/CuratedResults';
 import DateSearch from '../src/screens/DateSearch';
-import Header from '../src/components/Header';
 import StatelessResults from '../src/screens/StatelessResults';
-import Dates from '../src/components/Dates';
 import CustomButton from '../src/components/CustomButton';
 
 const MyHomeScreen = ({ navigation }) => (
   <ScrollView>
-    <Button
+
+    <CustomButton
       onPress={() => navigation.navigate('DateSearch', { name: 'Date Search'})}
-      title="Date Search"
-    />
+      >
+      Create Your Own Experience!
+    </CustomButton>
 
-    <Home />
+    <View style={{flexDirection: 'row', }}>
+    <CustomButton style={{width: 160, height: 160 }}>
+    <Text
+      onPress={() => navigation.navigate('CuratedResults', { name: 'Dates'})}
+      style={{textAlign: 'center',
+                  fontWeight: 'bold',
+                  fontSize: 32,
+                  marginTop: 100,
+                  }}>
+    Eats
+    </Text>
+    </CustomButton>
 
-    <Button
-      onPress={() => navigation.navigate('CuratedResults', { name: 'Results'})}
-      title="See More"
-    />
+    <CustomButton style={{width: 160, height: 160 }}>
+    <Text
+      onPress={() => navigation.navigate('CuratedResults', { name: 'Dates'})}
+      style={{textAlign: 'center',
+                  fontWeight: 'bold',
+                  fontSize: 32,
+                  marginTop: 100,
+                  }}>
+    Active
+    </Text>
+    </CustomButton>
+    </View>
+
+    <View style={{flexDirection: 'row', }}>
+    <CustomButton style={{width: 160, height: 160 }}>
+    <Text
+    onPress={() => navigation.navigate('CuratedResults', { name: 'Dates'})}
+    style={{textAlign: 'center',
+                  fontWeight: 'bold',
+                  fontSize: 32,
+                  marginTop: 100,
+                  }}>
+    Live
+    </Text>
+    </CustomButton>
+
+    <CustomButton style={{width: 160, height: 160 }}>
+    <Text
+    onPress={() => navigation.navigate('CuratedResults', { name: 'Dates'})}
+    style={{textAlign: 'center',
+                  fontWeight: 'bold',
+                  fontSize: 32,
+                  marginTop: 100,
+                  }}>
+    Random
+    </Text>
+    </CustomButton>
+    </View>
+
 
   </ScrollView>
 );
@@ -34,7 +79,7 @@ const MyResults = (props) => (
   </ScrollView>
 );
 
-const DateSearchScreen = ({ navigation }, {makeApiRequest}) => (
+const DateSearchScreen = ({ navigation }) => (
   <View>
   <Text>
     WHERE YOU AT?
@@ -45,11 +90,13 @@ const DateSearchScreen = ({ navigation }, {makeApiRequest}) => (
   title='Use Device Location'
   />
 
-  <CustomButton onPress={()=> console.log('pressed the custom button')}>
-    Click it
-  </CustomButton>
-
   </View>
+);
+
+const DateScreen = ({ navigation }) => (
+  <Text>
+    the date
+  </Text>
 );
 
 export const StackNav = StackNavigator({
@@ -75,6 +122,12 @@ export const StackNav = StackNavigator({
     screen: MyResults,
     navigationOptions: {
       title: 'Results',
+    }
+  },
+  DateScreen: {
+    screen: DateScreen,
+    navigationOptions: {
+      title: 'Date',
     }
   }
 });
