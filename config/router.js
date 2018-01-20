@@ -8,9 +8,10 @@ import StatelessResults from '../src/screens/StatelessResults';
 import CustomButton from '../src/components/CustomButton';
 import DateDetail from '../src/components/DateDetail';
 import SingleDate from '../src/screens/SingleDate';
+import SingleDateRequest from '../src/components/SingleDateRequest';
 
 const DateScreen = ({ navigation }) => (
-  <SingleDate />
+  <SingleDateRequest />
 );
 
 export const StackNav = StackNavigator({
