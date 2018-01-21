@@ -92,7 +92,7 @@ export default class DateSearch extends React.Component {
   };
 
   makeApiRequest(props) {
-    let url = `${placesSearchBaseURL}${this.state.location.coords.latitude},${this.state.location.coords.longitude}&radius=500&key=${GOOGLE_API_KEY}&types=restaurant`;
+    let url = `${placesSearchBaseURL}${this.state.location.coords.latitude},${this.state.location.coords.longitude}&radius=2000&key=${GOOGLE_API_KEY}&types=restaurant`;
     // will automatically be executed when component is about to be rendered
     axios.get(url)
     // updates dates piece of state
@@ -128,6 +128,15 @@ export default class DateSearch extends React.Component {
         title='Use Device Location'
         />
 
+        <CustomButton
+          style={styles.customButtonStyle}
+          onPress={() => this.makeApiRequest}
+          >
+          <Text style={{color: '#fff', fontSize: 24}}>
+            Use Device Location
+          </Text>
+        </CustomButton>
+
         {this.renderDates()}
       </ScrollView>
     );
@@ -153,5 +162,14 @@ const styles = StyleSheet.create({
     fontFamily: 'GillSans-BoldItalic',
     fontSize: 52,
     color: '#fff'
+  },
+  customButtonStyle: {
+    height: 58,
+    backgroundColor: '#B2DBBF',
+    borderColor: '#0072BB',
+    borderWidth: 0,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
   }
 });
