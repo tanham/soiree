@@ -14,7 +14,6 @@ const SingleDateDetail = (props) => {
         <View>
           <Text>
           rendering single date detail component
-        
           {console.log(props)}
           </Text>
         </View>
