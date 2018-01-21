@@ -15,10 +15,10 @@ class Home extends Component {
       <View style={styles.homeLayoutStyle}>
 
       <CustomButton
-        style={{height: 58, backgroundColor: '#0072BB', color: '#fff', fontSize: 24, borderColor: '#0072BB', borderWidth: 0}}
+        style={{height: 58, backgroundColor: '#0072BB', fontSize: 24, borderColor: '#0072BB', borderWidth: 0}}
         onPress={() => navigate('DateSearch', { name: 'Date Search'})}
         >
-        <Text>
+        <Text style={{color: '#fff'}}>
           Create Your Own Experience
         </Text>
       </CustomButton>
