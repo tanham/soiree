@@ -30,11 +30,7 @@ class Home extends Component {
       <CustomButton style={styles.customButtonStyle}>
       <Text
         onPress={() => navigate('CuratedResults', { name: 'Dates'})}
-        style={{ alignSelf: 'center',
-                    fontWeight: 'bold',
-                    fontSize: 32,
-                    color: '#fff',
-                    }}>
+        style={styles.buttonTextStyle}>
       Eats
       </Text>
       </CustomButton>
@@ -42,12 +38,7 @@ class Home extends Component {
       <CustomButton style={styles.customButtonStyle}>
       <Text
         onPress={() => navigate('CuratedResults', { name: 'Dates'})}
-        style={{textAlign: 'center',
-                    fontWeight: 'bold',
-                    fontSize: 32,
-                    marginTop: 100,
-                    color: '#fff',
-                    }}>
+        style={styles.buttonTextStyle}>
       Active
       </Text>
       </CustomButton>
@@ -57,12 +48,7 @@ class Home extends Component {
       <CustomButton style={styles.customButtonStyle}>
       <Text
       onPress={() => navigate('CuratedResults', { name: 'Dates'})}
-      style={{textAlign: 'center',
-                    fontWeight: 'bold',
-                    fontSize: 32,
-                    marginTop: 100,
-                    color: '#fff',
-                    }}>
+      style={styles.buttonTextStyle}>
       Live
       </Text>
       </CustomButton>
@@ -70,12 +56,7 @@ class Home extends Component {
       <CustomButton style={styles.customButtonStyle}>
       <Text
       onPress={() => navigate('CuratedResults', { name: 'Dates'})}
-      style={{textAlign: 'center',
-                    fontWeight: 'bold',
-                    fontSize: 32,
-                    marginTop: 100,
-                    color: '#fff',
-                    }}>
+      style={styles.buttonTextStyle}>
       Random
       </Text>
       </CustomButton>
@@ -106,6 +87,13 @@ const styles = {
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.2
+  },
+  buttonTextStyle: {
+    textAlign: 'center',
+    fontWeight: 'bold',
+    fontSize: 32,
+    marginTop: 100,
+    color: '#fff'
   }
 };
 
