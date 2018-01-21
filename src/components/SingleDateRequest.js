@@ -14,6 +14,8 @@ const SingleDateDetail = (props) => {
         <View>
           <Text>
           rendering single date detail component
+        
+          {console.log(props)}
           </Text>
         </View>
       </CardSection>
@@ -27,8 +29,9 @@ export default class SingleDateRequest extends React.Component {
   };
 
   render() {
+    console.log(this.props);
     return (
-      <SingleDateDetail />
+      <SingleDateDetail  />
     );
   };
 }

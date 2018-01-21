@@ -41,7 +41,9 @@ const DateDetail = (props) => {
       </CardSection>
       <CardSection>
         <CustomButton
-        onPress={() => navigate('DateScreen', { name: 'Date'})}
+        onPress={() => navigate('DateScreen', { name: 'Date'}), console.log(props)
+      }
+
         >
           Click Me
         </CustomButton>
