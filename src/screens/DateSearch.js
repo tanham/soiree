@@ -119,7 +119,7 @@ export default class DateSearch extends React.Component {
   render() {
     return (
       <ScrollView style={{backgroundColor: '#B2DBBF'}}>
-        <Text>
+        <Text style={styles.titleTextStyle}>
           WHERE YOU AT?
         </Text>
 
@@ -147,4 +147,11 @@ const styles = StyleSheet.create({
     fontSize: 36,
     textAlign: 'center',
   },
+  titleTextStyle: {
+    paddingTop: 10,
+    textAlign: 'center',
+    fontFamily: 'GillSans-BoldItalic',
+    fontSize: 52,
+    color: '#fff'
+  }
 });
