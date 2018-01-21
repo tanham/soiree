@@ -1,5 +1,6 @@
 import React from 'react';
 import { View,
+          ScrollView,
           Text,
           Button,
           Platform,
@@ -117,7 +118,7 @@ export default class DateSearch extends React.Component {
 
   render() {
     return (
-      <View>
+      <ScrollView style={{backgroundColor: '#B2DBBF'}}>
         <Text>
           WHERE YOU AT?
         </Text>
@@ -128,7 +129,7 @@ export default class DateSearch extends React.Component {
         />
 
         {this.renderDates()}
-      </View>
+      </ScrollView>
     );
   }
 }

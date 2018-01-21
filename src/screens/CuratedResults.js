@@ -7,7 +7,7 @@ import DatesList from '../components/DatesList';
 class CuratedResults extends Component {
   render() {
     return (
-      <ScrollView>
+      <ScrollView style={{backgroundColor: '#B2DBBF'}}>
 
         <Text>Results Page</Text>
 
