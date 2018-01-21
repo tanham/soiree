@@ -27,9 +27,7 @@ class Home extends Component {
 
       <View style={styles.buttonLayoutStlye}>
       <View style={{flexDirection: 'row', }}>
-      <CustomButton style={{width: 150, height: 150, backgroundColor: '#B2DBBF', shadowColor: '#000',
-      shadowOffset: { width: 0, height: 2 },
-      shadowOpacity: 0.2, }}>
+      <CustomButton style={styles.customButtonStyle}>
       <Text
         onPress={() => navigate('CuratedResults', { name: 'Dates'})}
         style={{ alignSelf: 'center',
@@ -41,9 +39,7 @@ class Home extends Component {
       </Text>
       </CustomButton>
 
-      <CustomButton style={{width: 150, height: 150, backgroundColor: '#B2DBBF', shadowColor: '#000',
-      shadowOffset: { width: 0, height: 2 },
-      shadowOpacity: 0.2, }}>
+      <CustomButton style={styles.customButtonStyle}>
       <Text
         onPress={() => navigate('CuratedResults', { name: 'Dates'})}
         style={{textAlign: 'center',
@@ -58,9 +54,7 @@ class Home extends Component {
       </View>
 
       <View style={{flexDirection: 'row', marginTop: 10 }}>
-      <CustomButton style={{width: 150, height: 150, backgroundColor: '#B2DBBF', shadowColor: '#000',
-      shadowOffset: { width: 0, height: 2 },
-      shadowOpacity: 0.2, }}>
+      <CustomButton style={styles.customButtonStyle}>
       <Text
       onPress={() => navigate('CuratedResults', { name: 'Dates'})}
       style={{textAlign: 'center',
@@ -73,9 +67,7 @@ class Home extends Component {
       </Text>
       </CustomButton>
 
-      <CustomButton style={{width: 150, height: 150, backgroundColor: '#B2DBBF', borderColor: '#fff', shadowColor: '#000',
-      shadowOffset: { width: 0, height: 2 },
-      shadowOpacity: 0.2,}}>
+      <CustomButton style={styles.customButtonStyle}>
       <Text
       onPress={() => navigate('CuratedResults', { name: 'Dates'})}
       style={{textAlign: 'center',
@@ -105,6 +97,15 @@ const styles = {
   },
   buttonLayoutStlye: {
       marginTop: 30,
+  },
+  customButtonStyle: {
+    width: 150,
+    height: 150,
+    backgroundColor: '#B2DBBF',
+    borderColor: '#fff',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2
   }
 };
 
