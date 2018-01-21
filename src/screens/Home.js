@@ -25,13 +25,13 @@ class Home extends Component {
 
       <View style={styles.buttonLayoutStlye}>
       <View style={{flexDirection: 'row', }}>
-      <CustomButton style={{width: 160, height: 160 }}>
+      <CustomButton style={{width: 160, height: 160, alignSelf: 'center' }}>
       <Text
         onPress={() => navigate('CuratedResults', { name: 'Dates'})}
-        style={{textAlign: 'center',
+        style={{ alignSelf: 'center',
                     fontWeight: 'bold',
                     fontSize: 32,
-                    marginTop: 100,
+
                     }}>
       Eats
       </Text>
