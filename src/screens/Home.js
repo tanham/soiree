@@ -12,13 +12,15 @@ class Home extends Component {
 
     const { navigate } = this.props.navigation;
     return (
-      <ScrollView>
+      <View style={styles.homeLayoutStyle}>
+
       <CustomButton
         onPress={() => navigate('DateSearch', { name: 'Date Search'})}
         >
         Create Your Own Experience!
       </CustomButton>
 
+      <View style={styles.buttonLayoutStlye}>
       <View style={{flexDirection: 'row', }}>
       <CustomButton style={{width: 160, height: 160 }}>
       <Text
@@ -70,10 +72,23 @@ class Home extends Component {
       </Text>
       </CustomButton>
       </View>
-      </ScrollView>
+
+      </View>
+
+      </View>
 
     );
   }
 }
+
+const styles = {
+  homeLayoutStyle: {
+    alignSelf: 'center',
+    marginTop: 20,
+  },
+  buttonLayoutStlye: {
+      marginTop: 10,
+  }
+};
 
 export default Home;
