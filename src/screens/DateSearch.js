@@ -30,7 +30,7 @@ const DateDetail = (props) => {
       <CardSection>
         <View style={styles.headerContentStyle}>
           <Text style={styles.headerTextStyle}>{props.date.name}</Text>
-          <Text>{props.date.vicinity}</Text>
+          <Text style={{color: '#fff'}}>{props.date.vicinity}</Text>
         </View>
       </CardSection>
       <CardSection>
@@ -40,11 +40,14 @@ const DateDetail = (props) => {
         />
       </CardSection>
       <CardSection>
-        <CustomButton
-        onPress={() => navigate('DateScreen', { name: 'Date'})}
-        >
-          Click Me
-        </CustomButton>
+
+        <View style={styles.anotherCustomButtonStyle}>
+          <Button
+          onPress={() => navigate('DateScreen', { name: 'Date'})}
+          title='Click Me'
+          color="#fff"
+          />
+        </View>
       </CardSection>
 
     </Card>
@@ -166,5 +169,25 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.2,
   },
-
+  headerContentStyle: {
+    flexDirection: 'column',
+    justifyContent: 'space-around',
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  headerTextStyle: {
+    fontSize: 20,
+    color: '#fff'
+  },
+  anotherCustomButtonStyle: {
+    backgroundColor: '#B2DBBF',
+    borderColor: '#B2DBBF',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 });
