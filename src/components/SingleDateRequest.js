@@ -28,12 +28,30 @@ const SingleDateDetail = (props) => {
 export default class SingleDateRequest extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      date: null
+    }
+  };
+
+  componentWillMount() {
+    axios.get('https://maps.googleapis.com/maps/api/place/details/json?placeid=ChIJq_x-rcdqkFQRvZG5CzgtCvU&key=AIzaSyDDVF13v_iX0m-03WeYMn-lJoLn3vmbC04')
+    .then(response => this.setState({ date: response.data.result}));
+  };
+
+  renderDate() {
+    const theDate = JSON.stringify(this.state.date);
+    return theDate;
   };
 
   render() {
     console.log(this.props);
     return (
-      <SingleDateDetail  />
+      <ScrollView>
+      <Text>
+        {this.renderDate()}
+      </Text>
+      </ScrollView>
+
     );
   };
 }
