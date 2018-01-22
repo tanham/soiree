@@ -123,19 +123,14 @@ export default class DateSearch extends React.Component {
           WHERE YOU AT?
         </Text>
 
-        <Button
-        onPress={this.makeApiRequest}
-        title='Use Device Location'
-        />
+        <View style={styles.buttonContainerStyle}>
+          <Button
+          onPress={this.makeApiRequest}
+          title='Use Device Location'
+          color="#fff"
+          />
+        </View>
 
-        <CustomButton
-          style={styles.customButtonStyle}
-          onPress={() => this.makeApiRequest}
-          >
-          <Text style={{color: '#fff', fontSize: 24}}>
-            Use Device Location
-          </Text>
-        </CustomButton>
 
         {this.renderDates()}
       </ScrollView>
@@ -163,13 +158,13 @@ const styles = StyleSheet.create({
     fontSize: 52,
     color: '#fff'
   },
-  customButtonStyle: {
-    height: 58,
-    backgroundColor: '#B2DBBF',
-    borderColor: '#0072BB',
+  buttonContainerStyle: {
+    backgroundColor: '#FFB732',
+    borderColor: '#FFB732',
     borderWidth: 0,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.2,
-  }
+  },
+
 });
