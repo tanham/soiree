@@ -30,7 +30,7 @@ const DateDetail = (props) => {
       <CardSection>
         <View style={styles.headerContentStyle}>
           <Text style={styles.headerTextStyle}>{props.date.name}</Text>
-          <Text>{props.date.vicinity}</Text>
+          <Text style={{color: '#fff'}}>{props.date.vicinity}</Text>
         </View>
       </CardSection>
       <CardSection>
@@ -40,14 +40,17 @@ const DateDetail = (props) => {
         />
       </CardSection>
       <CardSection>
-        <CustomButton
-        name={props.date.name}
-        onPress={() => navigate('DateScreen', { name: 'Date'})
-      }
+      
 
-        >
-          Click Me
-        </CustomButton>
+        <View style={styles.anotherCustomButtonStyle}>
+          <Button
+          onPress={() => navigate('DateScreen', { name: 'Date'})}
+          title='Click Me'
+          color="#fff"
+          name={props.date.name}
+          />
+        </View>
+
       </CardSection>
 
     </Card>
@@ -95,7 +98,7 @@ export default class DateSearch extends React.Component {
   };
 
   makeApiRequest(props) {
-    let url = `${placesSearchBaseURL}${this.state.location.coords.latitude},${this.state.location.coords.longitude}&radius=500&key=${GOOGLE_API_KEY}&types=restaurant`;
+    let url = `${placesSearchBaseURL}${this.state.location.coords.latitude},${this.state.location.coords.longitude}&radius=2000&key=${GOOGLE_API_KEY}&types=restaurant`;
     // will automatically be executed when component is about to be rendered
     axios.get(url)
     // updates dates piece of state
@@ -121,15 +124,19 @@ export default class DateSearch extends React.Component {
 
   render() {
     return (
-      <ScrollView>
-        <Text>
+      <ScrollView style={{backgroundColor: '#B2DBBF'}}>
+        <Text style={styles.titleTextStyle}>
           WHERE YOU AT?
         </Text>
 
-        <Button
-        onPress={this.makeApiRequest}
-        title='Use Device Location'
-        />
+        <View style={styles.buttonContainerStyle}>
+          <Button
+          onPress={this.makeApiRequest}
+          title='Use Device Location'
+          color="#fff"
+          />
+        </View>
+
 
         {this.renderDates()}
       </ScrollView>
@@ -149,5 +156,41 @@ const styles = StyleSheet.create({
     margin: 24,
     fontSize: 36,
     textAlign: 'center',
+  },
+  titleTextStyle: {
+    paddingTop: 10,
+    textAlign: 'center',
+    fontFamily: 'GillSans-BoldItalic',
+    fontSize: 52,
+    color: '#fff'
+  },
+  buttonContainerStyle: {
+    backgroundColor: '#FFB732',
+    borderColor: '#FFB732',
+    borderWidth: 0,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+  },
+  headerContentStyle: {
+    flexDirection: 'column',
+    justifyContent: 'space-around',
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  headerTextStyle: {
+    fontSize: 20,
+    color: '#fff'
+  },
+  anotherCustomButtonStyle: {
+    backgroundColor: '#B2DBBF',
+    borderColor: '#B2DBBF',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });

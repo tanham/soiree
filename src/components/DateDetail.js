@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, Image } from 'react-native';
+import { Text, View, Image, Button } from 'react-native';
 import Card from './Card';
 import CardSection from './CardSection';
 import CustomButton from './CustomButton';
@@ -13,7 +13,7 @@ const DateDetail = (props) => {
     <CardSection>
     <View style={styles.headerContentStyle}>
     <Text style={styles.headerTextStyle}>{props.date.fields.Name}</Text>
-    <Text>Some location</Text>
+    <Text style={{color: '#fff'}}>Some location</Text>
 
     </View>
     </CardSection>
@@ -24,11 +24,15 @@ const DateDetail = (props) => {
     />
     </CardSection>
     <CardSection>
-    <CustomButton
-    onPress={() => navigate('DateScreen', { name: 'Date'})}
-    >
-    Click Me
-    </CustomButton>
+
+    <View style={styles.anotherCustomButtonStyle}>
+      <Button
+      onPress={() => navigate('DateScreen', { name: 'Date'})}
+      title='Click Me'
+      color="#fff"
+      />
+    </View>
+
     </CardSection>
 
     </Card>
@@ -40,15 +44,29 @@ const styles = {
   headerContentStyle: {
     flexDirection: 'column',
     justifyContent: 'space-around',
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   headerTextStyle: {
-    fontSize: 18,
+    fontSize: 20,
+    color: '#fff'
   },
   imageStyle: {
     height: 200,
     flex: 1,
     width: null
-  }
+  },
+  anotherCustomButtonStyle: {
+    backgroundColor: '#B2DBBF',
+    borderColor: '#B2DBBF',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 };
 
 

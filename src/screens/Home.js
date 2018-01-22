@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { ScrollView, Text, View, TouchableOpacity } from 'react-native';
-import { Tile, List, ListItem, Button } from 'react-native-elements';
+import { ScrollView, Text, View, Button, TouchableOpacity } from 'react-native';
+import { Tile, List, ListItem } from 'react-native-elements';
 import Header from '../components/Header';
 import DatesList from '../components/DatesList';
 import CustomButton from '../components/CustomButton';
@@ -15,68 +15,110 @@ class Home extends Component {
 
     const { navigate } = this.props.navigation;
     return (
-      <ScrollView>
-      <CustomButton
-        onPress={() => navigate('DateSearch', { name: 'Date Search'})}
-        >
-        Create Your Own Experience!
-      </CustomButton>
+      <ScrollView style={styles.homeLayoutStyle}>
 
-      <View style={{flexDirection: 'row', }}>
-      <CustomButton style={{width: 160, height: 160 }}>
-      <Text
-        onPress={() => navigate('CuratedResults', { name: 'Dates'})}
-        style={{textAlign: 'center',
-                    fontWeight: 'bold',
-                    fontSize: 32,
-                    marginTop: 100,
-                    }}>
-      Eats
-      </Text>
-      </CustomButton>
+        <View style={styles.buttonContainerStyle}>
+          <Button
+          onPress={() => navigate('DateSearch', { name: 'Date Search'})}
+          title='Create Your Own Experience'
+          color="#fff"
+          />
+        </View>
 
-      <CustomButton style={{width: 160, height: 160 }}>
-      <Text
-        onPress={() => navigate('CuratedResults', { name: 'Dates'})}
-        style={{textAlign: 'center',
-                    fontWeight: 'bold',
-                    fontSize: 32,
-                    marginTop: 100,
-                    }}>
-      Active
-      </Text>
-      </CustomButton>
-      </View>
+        <View style={styles.buttonLayoutStlye}>
+          <View style={{flexDirection: 'row', }}>
 
-      <View style={{flexDirection: 'row', }}>
-      <CustomButton style={{width: 160, height: 160 }}>
-      <Text
-      onPress={() => navigate('CuratedResults', { name: 'Dates'})}
-      style={{textAlign: 'center',
-                    fontWeight: 'bold',
-                    fontSize: 32,
-                    marginTop: 100,
-                    }}>
-      Live
-      </Text>
-      </CustomButton>
+            <View style={styles.anotherCustomButtonStyle}>
+              <Button
+              onPress={() => navigate('CuratedResults', { name: 'Dates'})}
+              title='Eats'
+              color="#fff"
+              />
+            </View>
 
-      <CustomButton style={{width: 160, height: 160 }}>
-      <Text
-      onPress={() => navigate('CuratedResults', { name: 'Dates'})}
-      style={{textAlign: 'center',
-                    fontWeight: 'bold',
-                    fontSize: 32,
-                    marginTop: 100,
-                    }}>
-      Random
-      </Text>
-      </CustomButton>
-      </View>
+            <View style={styles.anotherCustomButtonStyle}>
+              <Button
+              onPress={() => navigate('CuratedResults', { name: 'Dates'})}
+              title='Active'
+              color="#fff"
+              />
+            </View>
+          </View>
+
+          <View style={{flexDirection: 'row', }}>
+
+            <View style={styles.anotherCustomButtonStyle}>
+              <Button
+              onPress={() => navigate('CuratedResults', { name: 'Dates'})}
+              title='Live'
+              color="#fff"
+              />
+            </View>
+
+            <View style={styles.anotherCustomButtonStyle}>
+              <Button
+              onPress={() => navigate('CuratedResults', { name: 'Dates'})}
+              title='Random'
+              color="#fff"
+              />
+            </View>
+          </View>
+        </View>
       </ScrollView>
-
     );
   }
 }
+
+const styles = {
+  homeLayoutStyle: {
+    backgroundColor: '#B2DBBF'
+  },
+  buttonLayoutStlye: {
+      marginTop: 30,
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+  },
+  customButtonStyle: {
+    width: 150,
+    height: 150,
+    backgroundColor: '#B2DBBF',
+    borderColor: '#B2DBBF',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2
+  },
+  buttonContainerStyle: {
+    backgroundColor: '#FFB732',
+    borderColor: '#FFB732',
+    borderWidth: 0,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    height: 94,
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  anotherCustomButtonStyle: {
+    width: 150,
+    height: 150,
+    backgroundColor: '#B2DBBF',
+    borderColor: '#B2DBBF',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  buttonTextStyle: {
+    textAlign: 'center',
+    fontWeight: 'bold',
+    fontSize: 32,
+    marginTop: 100,
+    color: '#fff'
+  },
+};
 
 export default Home;
