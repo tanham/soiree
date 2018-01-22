@@ -9,7 +9,7 @@ class CuratedResults extends Component {
     return (
       <ScrollView style={{backgroundColor: '#B2DBBF'}}>
 
-        <Text>Results Page</Text>
+        <Text style={{fontFamily: 'GillSans-BoldItalic', fontSize: 34, alignSelf: 'center', color: '#fff'}}>Results Page</Text>
 
         <DatesList navigation={this.props.navigation}/>
 
