@@ -11,7 +11,7 @@ import SingleDate from '../src/screens/SingleDate';
 import SingleDateRequest from '../src/components/SingleDateRequest';
 
 const DateScreen = ({ navigation }) => (
-  <SingleDateRequest />
+  <SingleDateRequest placeid={placeid} />
 );
 
 export const StackNav = StackNavigator({

@@ -40,11 +40,11 @@ const DateDetail = (props) => {
         />
       </CardSection>
       <CardSection>
-      
+
 
         <View style={styles.anotherCustomButtonStyle}>
           <Button
-          onPress={() => navigate('DateScreen', { name: 'Date'})}
+          onPress={() => navigate('DateScreen', { name: 'Date'}, placeid=props.date.place_id) }
           title='Click Me'
           color="#fff"
           name={props.date.name}

@@ -7,6 +7,7 @@ import Card from './Card';
 import CardSection from './CardSection';
 import CustomButton from './CustomButton';
 
+
 const SingleDateDetail = (props) => {
   return (
     <ScrollView style={{backgroundColor: '#B2DBBF'}}>
@@ -15,7 +16,6 @@ const SingleDateDetail = (props) => {
           <View>
             <Text style={{ color: '#fff'}}>
             rendering single date detail component
-            {console.log(props)}
             </Text>
           </View>
         </CardSection>
@@ -31,22 +31,25 @@ export default class SingleDateRequest extends React.Component {
     this.state = {
       date: null
     }
+    console.log(placeid);
   };
 
   componentWillMount() {
-    axios.get('https://maps.googleapis.com/maps/api/place/details/json?placeid=ChIJq_x-rcdqkFQRvZG5CzgtCvU&key=AIzaSyDDVF13v_iX0m-03WeYMn-lJoLn3vmbC04')
+    let url = `https://maps.googleapis.com/maps/api/place/details/json?placeid=${placeid}&key=${GOOGLE_API_KEY}`;
+    axios.get(url)
     .then(response => this.setState({ date: response.data.result}));
   };
 
+
   renderDate() {
-    const theDate = JSON.stringify(this.state.date);
-    return theDate;
+    const dateDetails = JSON.stringify(this.state.date);
+    return dateDetails;
   };
 
   render() {
-    console.log(this.props);
     return (
       <ScrollView>
+      <SingleDateDetail />
       <Text>
         {this.renderDate()}
       </Text>
