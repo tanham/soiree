@@ -9,7 +9,7 @@ class CuratedResults extends Component {
     return (
       <ScrollView style={{backgroundColor: '#B2DBBF'}}>
 
-        <Text style={{fontFamily: 'GillSans-BoldItalic', fontSize: 34, alignSelf: 'center', color: '#fff'}}>Results Page</Text>
+        <Text style={styles.textStyle}>Results Page</Text>
 
         <DatesList navigation={this.props.navigation}/>
 
@@ -18,5 +18,14 @@ class CuratedResults extends Component {
     );
   }
 }
+
+const styles = {
+  textStyle: {
+    fontFamily: 'GillSans-BoldItalic',
+    fontSize: 34,
+    alignSelf: 'center',
+    color: '#fff'
+  }
+};
 
 export default CuratedResults;
