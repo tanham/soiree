@@ -15,7 +15,7 @@ class Home extends Component {
       <ScrollView style={styles.homeLayoutStyle}>
 
       <CustomButton
-        style={{height: 58, backgroundColor: '#B2DBBF', borderColor: '#0072BB', borderWidth: 0, shadowColor: '#000',
+        style={{height: 58, backgroundColor: '#FFB732', borderColor: '#FFB732', borderWidth: 0, shadowColor: '#000',
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.2, }}
         onPress={() => navigate('DateSearch', { name: 'Date Search'})}
@@ -83,7 +83,7 @@ const styles = {
     width: 150,
     height: 150,
     backgroundColor: '#B2DBBF',
-    borderColor: '#fff',
+    borderColor: '#B2DBBF',
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.2
