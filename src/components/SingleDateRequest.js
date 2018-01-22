@@ -9,16 +9,19 @@ import CustomButton from './CustomButton';
 
 const SingleDateDetail = (props) => {
   return (
-    <Card>
-      <CardSection>
-        <View>
-          <Text>
-          rendering single date detail component
-          {console.log(props)}
-          </Text>
-        </View>
-      </CardSection>
-    </Card>
+    <ScrollView style={{backgroundColor: '#B2DBBF'}}>
+      <Card>
+        <CardSection>
+          <View>
+            <Text style={{ color: '#fff'}}>
+            rendering single date detail component
+            {console.log(props)}
+            </Text>
+          </View>
+        </CardSection>
+      </Card>
+    </ScrollView>
+
   );
 };
 
