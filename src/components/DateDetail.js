@@ -13,7 +13,7 @@ const DateDetail = (props) => {
     <CardSection>
     <View style={styles.headerContentStyle}>
     <Text style={styles.headerTextStyle}>{props.date.fields.Name}</Text>
-    <Text>Some location</Text>
+    <Text style={{color: '#fff'}}>Some location</Text>
 
     </View>
     </CardSection>
@@ -44,9 +44,13 @@ const styles = {
   headerContentStyle: {
     flexDirection: 'column',
     justifyContent: 'space-around',
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   headerTextStyle: {
-    fontSize: 18,
+    fontSize: 20,
+    color: '#fff'
   },
   imageStyle: {
     height: 200,
