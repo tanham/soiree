@@ -60,7 +60,6 @@ const DateDetail = (props) => {
 export default class DateSearch extends React.Component {
   constructor(props) {
     super(props);
-    this.handleClick = this.handleClick.bind(this);
     this.state = {
       location: null,
       errorMessage: null,
@@ -68,10 +67,6 @@ export default class DateSearch extends React.Component {
     };
     this.makeApiRequest = this.makeApiRequest.bind(this);
     this.renderDates = this.renderDates.bind(this);
-  };
-
-  handleClick() {
-    console.log('yaassssss!');
   };
 
   componentWillMount() {
@@ -117,22 +112,30 @@ export default class DateSearch extends React.Component {
     return renderedDates;
   }
 
-  dummyfunction() {
-    // can use for autocomplete
-    console.log('being called on change text');
+  usingLocation() {
+    const message = "Using your location";
+    return message;
   };
 
   render() {
     return (
       <ScrollView style={{backgroundColor: '#B2DBBF'}}>
         <Text style={styles.titleTextStyle}>
-          WHERE YOU AT?
+          Create My Own Experience
         </Text>
 
         <View style={styles.buttonContainerStyle}>
           <Button
-          onPress={this.makeApiRequest}
+          onPress={this.usingLocation}
           title='Use Device Location'
+          color="#fff"
+          />
+        </View>
+
+        <View style={styles.buttonContainerStyle}>
+          <Button
+          onPress={this.makeApiRequest}
+          title='Search'
           color="#fff"
           />
         </View>
