@@ -70,6 +70,10 @@ export default class DateSearch extends React.Component {
     this.renderDates = this.renderDates.bind(this);
   };
 
+  handleClick() {
+    console.log('yaassssss!');
+  };
+
   componentWillMount() {
     if (Platform.OS === 'android' && !Constants.isDevice) {
       this.setState({
@@ -112,6 +116,11 @@ export default class DateSearch extends React.Component {
     );
     return renderedDates;
   }
+
+  dummyfunction() {
+    // can use for autocomplete
+    console.log('being called on change text');
+  };
 
   render() {
     return (
