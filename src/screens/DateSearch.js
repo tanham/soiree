@@ -122,7 +122,7 @@ export default class DateSearch extends React.Component {
   };
   render() {
     return (
-      <ScrollView style={{backgroundColor: '#B2DBBF'}}>
+      <ScrollView style={{backgroundColor: '#e3d6bb', flex: 1}}>
         <Text style={styles.titleTextStyle}>
           Create My Own Experience
         </Text>
@@ -135,29 +135,29 @@ export default class DateSearch extends React.Component {
           />
         </View>
 
-        <View style={{flexDirection: 'row', alignSelf:'center'}}>
-          <View style={{backgroundColor: 'green'}}>
+        <View style={{flexDirection: 'row', alignSelf:'center', marginLeft: 5, marginRight: 5 }}>
+          <View style={{backgroundColor: '#030202'}}>
             <Button
             onPress={this.handleClick}
             title='$'
             color="#fff"
             />
           </View>
-          <View style={{backgroundColor: 'green'}}>
+          <View style={{backgroundColor: '#030202', marginLeft: 5, marginRight: 5}}>
             <Button
             onPress={this.handleClick}
             title='$$'
             color="#fff"
             />
           </View>
-          <View style={{backgroundColor: 'green'}}>
+          <View style={{backgroundColor: '#030202', marginLeft: 5, marginRight: 5}}>
             <Button
             onPress={this.handleClick}
             title='$$$'
             color="#fff"
             />
           </View>
-          <View style={{backgroundColor: 'green'}}>
+          <View style={{backgroundColor: '#030202', marginLeft: 5, marginRight: 5}}>
             <Button
             onPress={this.handleClick}
             title='$$$$'
@@ -166,7 +166,21 @@ export default class DateSearch extends React.Component {
           </View>
         </View>
 
-        <View style={styles.buttonContainerStyle}>
+        <View style={{
+          width: 200,
+          marginTop: 10,
+          marginBottom: 10,
+          paddingTop: 10,
+          paddingBottom: 10,
+          backgroundColor: '#ca412b',
+          borderColor: '#ca412b',
+          borderWidth: 0,
+          shadowColor: '#000',
+          shadowOffset: { width: 0, height: 2 },
+          shadowOpacity: 0.2,
+          alignSelf: 'center',
+          borderRadius: 5
+        }}>
           <Button
           onPress={this.makeApiRequest}
           title='Search'
@@ -196,18 +210,24 @@ const styles = StyleSheet.create({
   },
   titleTextStyle: {
     paddingTop: 10,
+    paddingBottom: 15,
     textAlign: 'center',
-    fontFamily: 'GillSans-BoldItalic',
-    fontSize: 52,
-    color: '#fff'
+    fontSize: 28,
+    color: '#030202'
   },
   buttonContainerStyle: {
-    backgroundColor: '#FFB732',
-    borderColor: '#FFB732',
+    width: 200,
+    marginTop: 10,
+    marginBottom: 10,
+    paddingTop: 10,
+    paddingBottom: 10,
+    backgroundColor: '#ca412b',
+    borderColor: '#ca412b',
     borderWidth: 0,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.2,
+    alignSelf: 'center'
   },
   headerContentStyle: {
     flexDirection: 'column',
