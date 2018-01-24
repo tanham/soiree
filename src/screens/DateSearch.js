@@ -132,6 +132,37 @@ export default class DateSearch extends React.Component {
           />
         </View>
 
+        <View style={{flexDirection: 'row', alignSelf:'center'}}>
+          <View style={{backgroundColor: 'green'}}>
+            <Button
+            onPress={console.log('clicked price button')}
+            title='$'
+            color="#fff"
+            />
+          </View>
+          <View style={{backgroundColor: 'green'}}>
+            <Button
+            onPress={console.log('clicked price button')}
+            title='$$'
+            color="#fff"
+            />
+          </View>
+          <View style={{backgroundColor: 'green'}}>
+            <Button
+            onPress={console.log('clicked price button')}
+            title='$$$'
+            color="#fff"
+            />
+          </View>
+          <View style={{backgroundColor: 'green'}}>
+            <Button
+            onPress={console.log('clicked price button')}
+            title='$$$$'
+            color="#fff"
+            />
+          </View>
+        </View>
+
         <View style={styles.buttonContainerStyle}>
           <Button
           onPress={this.makeApiRequest}
