@@ -30,7 +30,7 @@ const DateDetail = (props) => {
       <CardSection>
         <View style={styles.headerContentStyle}>
           <Text style={styles.headerTextStyle}>{props.date.name}</Text>
-          <Text style={{color: '#fff'}}>{props.date.vicinity}</Text>
+          <Text style={{color: '#030202'}}>{props.date.vicinity}</Text>
         </View>
       </CardSection>
       <CardSection>
@@ -153,18 +153,10 @@ export default class DateSearch extends React.Component {
   };
   render() {
     return (
-      <ScrollView style={{backgroundColor: '#ddd', flex: 1}}>
+      <ScrollView style={{backgroundColor: '#e8e8e8', flex: 1}}>
         <Text style={styles.titleTextStyle}>
           Create My Own Experience
         </Text>
-
-        <View style={styles.buttonContainerStyle}>
-          <Button
-          onPress={this.usingLocation}
-          title='Use Device Location'
-          color="#fff"
-          />
-        </View>
 
         <View style={{flexDirection: 'row', alignSelf:'center', marginLeft: 5, marginRight: 5 }}>
           <View style={{backgroundColor: '#030202'}}>
@@ -203,8 +195,8 @@ export default class DateSearch extends React.Component {
           marginBottom: 10,
           paddingTop: 10,
           paddingBottom: 10,
-          backgroundColor: '#ca412b',
-          borderColor: '#ca412b',
+          backgroundColor: '#66C7F4',
+          borderColor: '#66C7F4',
           borderWidth: 0,
           shadowColor: '#000',
           shadowOffset: { width: 0, height: 2 },
@@ -252,8 +244,8 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     paddingTop: 10,
     paddingBottom: 10,
-    backgroundColor: '#ca412b',
-    borderColor: '#ca412b',
+    backgroundColor: '#66C7F4',
+    borderColor: '#66C7F4',
     borderWidth: 0,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
@@ -269,11 +261,11 @@ const styles = StyleSheet.create({
   },
   headerTextStyle: {
     fontSize: 20,
-    color: '#fff'
+    color: '#030202'
   },
   anotherCustomButtonStyle: {
-    backgroundColor: '#ca412b',
-    borderColor: '#ca412b',
+    backgroundColor: '#66C7F4',
+    borderColor: '#66C7F4',
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.2,

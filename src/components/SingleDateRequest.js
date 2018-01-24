@@ -1,29 +1,11 @@
 import React from 'react';
-import { View, ScrollView, Text } from 'react-native';
+import { View, ScrollView, Text, Linking } from 'react-native';
 import { GOOGLE_API_KEY } from 'react-native-dotenv';
 import '../global';
 import axios from 'axios';
 import Card from './Card';
 import CardSection from './CardSection';
 import CustomButton from './CustomButton';
-
-
-const SingleDateDetail = (props) => {
-  return (
-    <ScrollView style={{backgroundColor: '#B2DBBF'}}>
-      <Card>
-        <CardSection>
-          <View>
-            <Text style={{ color: '#fff'}}>
-            rendering single date detail component
-            </Text>
-          </View>
-        </CardSection>
-      </Card>
-    </ScrollView>
-
-  );
-};
 
 export default class SingleDateRequest extends React.Component {
   constructor(props) {
@@ -51,15 +33,35 @@ export default class SingleDateRequest extends React.Component {
 
   renderDate() {
     return `Date:${this.state.name} Address:${this.state.address} Number:${this.state.phoneNumber} Raiting:${this.state.rating} Website:${this.state.website} `
+
   };
 
   render() {
     return (
       <ScrollView>
-      <SingleDateDetail />
-      <Text>
-        {this.renderDate()}
-      </Text>
+
+        <Card>
+          <CardSection>
+            <Text>
+              {this.state.name}
+            </Text>
+          </CardSection>
+          <CardSection>
+            <Text>
+              {this.state.address}
+            </Text>
+          </CardSection>
+          <CardSection>
+            <Text>
+              Rating: {this.state.rating}
+            </Text>
+          </CardSection>
+          <CardSection>
+            <Text onPress={() => Linking.openURL(`${this.state.website}`)}>
+              {this.state.website}
+            </Text>
+          </CardSection>
+        </Card>
       </ScrollView>
 
     );

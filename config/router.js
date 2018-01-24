@@ -7,7 +7,6 @@ import DateSearch from '../src/screens/DateSearch';
 import StatelessResults from '../src/screens/StatelessResults';
 import CustomButton from '../src/components/CustomButton';
 import DateDetail from '../src/components/DateDetail';
-import SingleDate from '../src/screens/SingleDate';
 import SingleDateRequest from '../src/components/SingleDateRequest';
 
 const DateScreen = ({ navigation }) => (
@@ -24,7 +23,7 @@ export const StackNav = StackNavigator({
   DateSearch: {
     screen: DateSearch,
     navigationOptions: {
-      title: 'Date Search',
+      title: 'Nearby',
     }
   },
   CuratedResults: {
@@ -42,7 +41,7 @@ export const StackNav = StackNavigator({
   DateScreen: {
     screen: DateScreen,
     navigationOptions: {
-      title: 'Date',
+      title: 'Place',
     }
   },
 });
