@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, TouchableOpacity } from 'react-native';
 
-const CustomButton = ( {onPress, children, style} ) => {
+const CustomButton = ( {onPress, style, children} ) => {
   const { buttonStyle, textStyle } = styles;
 
   return (
@@ -19,7 +19,7 @@ const styles = {
     backgroundColor: '#fff',
     borderRadius: 5,
     borderWidth:1,
-    borderColor: '#007aff',
+    borderColor: '#fff',
     marginLeft: 5,
     marginRight: 5,
   },

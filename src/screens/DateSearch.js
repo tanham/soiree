@@ -1,5 +1,6 @@
 import React from 'react';
 import { View,
+          ScrollView,
           Text,
           Button,
           Platform,
@@ -21,14 +22,15 @@ import Card from '../components/Card';
 import CardSection from '../components/CardSection';
 import CustomButton from '../components/CustomButton';
 
-
 const DateDetail = (props) => {
+  const { navigate } = props.navigation;
+
   return (
     <Card>
       <CardSection>
         <View style={styles.headerContentStyle}>
           <Text style={styles.headerTextStyle}>{props.date.name}</Text>
-          <Text>{props.date.vicinity}</Text>
+          <Text style={{color: '#fff'}}>{props.date.vicinity}</Text>
         </View>
       </CardSection>
       <CardSection>
@@ -38,9 +40,17 @@ const DateDetail = (props) => {
         />
       </CardSection>
       <CardSection>
-        <CustomButton onPress={() => console.log(props.date.name)}>
-          Click Me
-        </CustomButton>
+
+
+        <View style={styles.anotherCustomButtonStyle}>
+          <Button
+          onPress={() => navigate('DateScreen', { name: 'Date'}, placeid=props.date.place_id) }
+          title='Click Me'
+          color="#fff"
+          name={props.date.name}
+          />
+        </View>
+
       </CardSection>
 
     </Card>
@@ -48,10 +58,8 @@ const DateDetail = (props) => {
 };
 
 export default class DateSearch extends React.Component {
-
   constructor(props) {
     super(props);
-    this.handleClick = this.handleClick.bind(this);
     this.state = {
       location: null,
       errorMessage: null,
@@ -61,9 +69,6 @@ export default class DateSearch extends React.Component {
     this.renderDates = this.renderDates.bind(this);
   };
 
-  handleClick() {
-    console.log('yaassssss!');
-  };
   componentWillMount() {
     if (Platform.OS === 'android' && !Constants.isDevice) {
       this.setState({
@@ -72,7 +77,6 @@ export default class DateSearch extends React.Component {
     } else {
       this._getLocationAsync();
     }
-
   };
 
   _getLocationAsync = async () => {
@@ -89,7 +93,7 @@ export default class DateSearch extends React.Component {
   };
 
   makeApiRequest(props) {
-    let url = `${placesSearchBaseURL}${this.state.location.coords.latitude},${this.state.location.coords.longitude}&radius=500&key=${GOOGLE_API_KEY}&types=restaurant`;
+    let url = `${placesSearchBaseURL}${this.state.location.coords.latitude},${this.state.location.coords.longitude}&radius=2000&key=${GOOGLE_API_KEY}&types=restaurant`;
     // will automatically be executed when component is about to be rendered
     axios.get(url)
     // updates dates piece of state
@@ -100,30 +104,79 @@ export default class DateSearch extends React.Component {
 
   renderDates() {
     let renderedDates = this.state.dates.map(date =>
-      <DateDetail key={date.id} date={date} />
+      <DateDetail
+        key={date.id}
+        date={date}
+        navigation={this.props.navigation} />
     );
     return renderedDates;
   }
 
-  dummyfunction() {
-    // can use for autocomplete
-    console.log('being called on change text');
+  usingLocation() {
+    const message = "Using your location";
+    return message;
   };
 
+  handleClick() {
+    console.log('clicked');
+  };
   render() {
-
-
     return (
-      <View>
-      {/* I want this function to trigger on load instead of on press but as it stands now, ajax is making it so, onLoad location is still null.*/}
-      <Button
-      onPress={this.makeApiRequest}
-      title='see results'
-      />
+      <ScrollView style={{backgroundColor: '#B2DBBF'}}>
+        <Text style={styles.titleTextStyle}>
+          Create My Own Experience
+        </Text>
 
-      {this.renderDates()}
+        <View style={styles.buttonContainerStyle}>
+          <Button
+          onPress={this.usingLocation}
+          title='Use Device Location'
+          color="#fff"
+          />
+        </View>
 
-      </View>
+        <View style={{flexDirection: 'row', alignSelf:'center'}}>
+          <View style={{backgroundColor: 'green'}}>
+            <Button
+            onPress={this.handleClick}
+            title='$'
+            color="#fff"
+            />
+          </View>
+          <View style={{backgroundColor: 'green'}}>
+            <Button
+            onPress={this.handleClick}
+            title='$$'
+            color="#fff"
+            />
+          </View>
+          <View style={{backgroundColor: 'green'}}>
+            <Button
+            onPress={this.handleClick}
+            title='$$$'
+            color="#fff"
+            />
+          </View>
+          <View style={{backgroundColor: 'green'}}>
+            <Button
+            onPress={this.handleClick}
+            title='$$$$'
+            color="#fff"
+            />
+          </View>
+        </View>
+
+        <View style={styles.buttonContainerStyle}>
+          <Button
+          onPress={this.makeApiRequest}
+          title='Search'
+          color="#fff"
+          />
+        </View>
+
+
+        {this.renderDates()}
+      </ScrollView>
     );
   }
 }
@@ -140,5 +193,41 @@ const styles = StyleSheet.create({
     margin: 24,
     fontSize: 36,
     textAlign: 'center',
+  },
+  titleTextStyle: {
+    paddingTop: 10,
+    textAlign: 'center',
+    fontFamily: 'GillSans-BoldItalic',
+    fontSize: 52,
+    color: '#fff'
+  },
+  buttonContainerStyle: {
+    backgroundColor: '#FFB732',
+    borderColor: '#FFB732',
+    borderWidth: 0,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+  },
+  headerContentStyle: {
+    flexDirection: 'column',
+    justifyContent: 'space-around',
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  headerTextStyle: {
+    fontSize: 20,
+    color: '#fff'
+  },
+  anotherCustomButtonStyle: {
+    backgroundColor: '#B2DBBF',
+    borderColor: '#B2DBBF',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
