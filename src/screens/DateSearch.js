@@ -63,7 +63,8 @@ export default class DateSearch extends React.Component {
     this.state = {
       location: null,
       errorMessage: null,
-      dates: []
+      dates: [],
+      priceLevel: ''
     };
     this.makeApiRequest = this.makeApiRequest.bind(this);
     this.renderDates = this.renderDates.bind(this);
@@ -97,31 +98,32 @@ export default class DateSearch extends React.Component {
   };
 
   handlePriceLevel1() {
-    let url = `${placesSearchBaseURL}${this.state.location.coords.latitude},${this.state.location.coords.longitude}&radius=2000&key=${GOOGLE_API_KEY}&types=restaurant&maxprice=1`;
-    console.log('using 1');
-    return url;
+    let priceLevel = '1';
+    this.setState({ priceLevel })
+    console.log(priceLevel);
+
   }
 
   handlePriceLevel2() {
-    let url = `${placesSearchBaseURL}${this.state.location.coords.latitude},${this.state.location.coords.longitude}&radius=2000&key=${GOOGLE_API_KEY}&types=restaurant&maxprice=2`;
-    console.log('using 2');
-    return url;
+    let priceLevel = '2';
+    this.setState({ priceLevel })
+    console.log(priceLevel);
   }
 
   handlePriceLevel3() {
-    let url = `${placesSearchBaseURL}${this.state.location.coords.latitude},${this.state.location.coords.longitude}&radius=2000&key=${GOOGLE_API_KEY}&types=restaurant&maxprice=3`;
-    console.log('using 3');
-    return url;
+    let priceLevel = '3';
+    this.setState({ priceLevel })
+    console.log(priceLevel);
   }
 
   handlePriceLevel4() {
-    let url = `${placesSearchBaseURL}${this.state.location.coords.latitude},${this.state.location.coords.longitude}&radius=2000&key=${GOOGLE_API_KEY}&types=restaurant&maxprice=4`;
-    console.log('using 4');
-    return url;
+    let priceLevel = '4';
+    this.setState({ priceLevel })
+    console.log(priceLevel);
   }
 
   makeApiRequest(props) {
-    let url = `${placesSearchBaseURL}${this.state.location.coords.latitude},${this.state.location.coords.longitude}&radius=2000&key=${GOOGLE_API_KEY}&types=restaurant`;
+    let url = `${placesSearchBaseURL}${this.state.location.coords.latitude},${this.state.location.coords.longitude}&radius=2000&key=${GOOGLE_API_KEY}&types=restaurant&maxprice=${this.state.priceLevel}`;
     // will automatically be executed when component is about to be rendered
     this.handlePriceLevel1();
 
@@ -175,21 +177,21 @@ export default class DateSearch extends React.Component {
           </View>
           <View style={{backgroundColor: 'green'}}>
             <Button
-            onPress={this.handleClick}
+            onPress={this.handlePriceLevel2}
             title='$$'
             color="#fff"
             />
           </View>
           <View style={{backgroundColor: 'green'}}>
             <Button
-            onPress={this.handleClick}
+            onPress={this.handlePriceLevel3}
             title='$$$'
             color="#fff"
             />
           </View>
           <View style={{backgroundColor: 'green'}}>
             <Button
-            onPress={this.handleClick}
+            onPress={this.handlePriceLevel4}
             title='$$$$'
             color="#fff"
             />
