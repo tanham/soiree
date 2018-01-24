@@ -6,6 +6,7 @@ import axios from 'axios';
 import Card from './Card';
 import CardSection from './CardSection';
 import CustomButton from './CustomButton';
+import { MapView } from 'expo';
 
 export default class SingleDateRequest extends React.Component {
   constructor(props) {
@@ -51,7 +52,9 @@ export default class SingleDateRequest extends React.Component {
                 fontSize: 20,
                 color: '#030202'}}>
                 {this.state.name}</Text>
-              <Text  onPress={() => Linking.openURL(`${this.state.maps}`)}>
+              <Text
+                style={{backgroundColor: '#2B2D42', color: '#fff'}}
+                onPress={() => Linking.openURL(`${this.state.maps}`)}>
                 {this.state.address}
                 </Text>
             </View>
@@ -68,6 +71,15 @@ export default class SingleDateRequest extends React.Component {
               {this.state.website}
             </Text>
           </CardSection>
+
+          <MapView
+            initialRegion={{
+              latitude: 37.78825,
+              longitude: -122.4324,
+              latitudeDelta: 0.0922,
+              longitudeDelta: 0.0421,
+            }}
+          />
         </Card>
       </ScrollView>
 
