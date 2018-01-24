@@ -67,6 +67,10 @@ export default class DateSearch extends React.Component {
     };
     this.makeApiRequest = this.makeApiRequest.bind(this);
     this.renderDates = this.renderDates.bind(this);
+    this.handlePriceLevel1 = this.handlePriceLevel1.bind(this);
+    this.handlePriceLevel2 = this.handlePriceLevel2.bind(this);
+    this.handlePriceLevel3 = this.handlePriceLevel3.bind(this);
+    this.handlePriceLevel4 = this.handlePriceLevel4.bind(this);
   };
 
   componentWillMount() {
@@ -92,9 +96,35 @@ export default class DateSearch extends React.Component {
     console.log(`lat: ${location.coords.latitude},lng: ${location.coords.longitude}`);
   };
 
+  handlePriceLevel1() {
+    let url = `${placesSearchBaseURL}${this.state.location.coords.latitude},${this.state.location.coords.longitude}&radius=2000&key=${GOOGLE_API_KEY}&types=restaurant&maxprice=1`;
+    console.log('using 1');
+    return url;
+  }
+
+  handlePriceLevel2() {
+    let url = `${placesSearchBaseURL}${this.state.location.coords.latitude},${this.state.location.coords.longitude}&radius=2000&key=${GOOGLE_API_KEY}&types=restaurant&maxprice=2`;
+    console.log('using 2');
+    return url;
+  }
+
+  handlePriceLevel3() {
+    let url = `${placesSearchBaseURL}${this.state.location.coords.latitude},${this.state.location.coords.longitude}&radius=2000&key=${GOOGLE_API_KEY}&types=restaurant&maxprice=3`;
+    console.log('using 3');
+    return url;
+  }
+
+  handlePriceLevel4() {
+    let url = `${placesSearchBaseURL}${this.state.location.coords.latitude},${this.state.location.coords.longitude}&radius=2000&key=${GOOGLE_API_KEY}&types=restaurant&maxprice=4`;
+    console.log('using 4');
+    return url;
+  }
+
   makeApiRequest(props) {
     let url = `${placesSearchBaseURL}${this.state.location.coords.latitude},${this.state.location.coords.longitude}&radius=2000&key=${GOOGLE_API_KEY}&types=restaurant`;
     // will automatically be executed when component is about to be rendered
+    this.handlePriceLevel1();
+
     axios.get(url)
     // updates dates piece of state
     .then(response => this.setState({ dates: response.data.results }));
@@ -138,7 +168,7 @@ export default class DateSearch extends React.Component {
         <View style={{flexDirection: 'row', alignSelf:'center'}}>
           <View style={{backgroundColor: 'green'}}>
             <Button
-            onPress={this.handleClick}
+            onPress={this.handlePriceLevel1}
             title='$'
             color="#fff"
             />
