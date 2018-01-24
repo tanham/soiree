@@ -13,15 +13,9 @@ const DateDetail = (props) => {
     <CardSection>
     <View style={styles.headerContentStyle}>
     <Text style={styles.headerTextStyle}>{props.date.fields.Name}</Text>
-    <Text style={{color: '#fff'}}>Some location</Text>
+    <Text style={{color: '#030202'}}>Some location</Text>
 
     </View>
-    </CardSection>
-    <CardSection>
-    <Image
-    style={styles.imageStyle}
-    source={{ uri : 'http://clipartix.com/wp-content/uploads/2016/04/Hearts-heart-clipart.png'}}
-    />
     </CardSection>
     <CardSection>
 
@@ -50,7 +44,7 @@ const styles = {
   },
   headerTextStyle: {
     fontSize: 20,
-    color: '#fff'
+    color: '#030202'
   },
   imageStyle: {
     height: 200,
@@ -58,8 +52,8 @@ const styles = {
     width: null
   },
   anotherCustomButtonStyle: {
-    backgroundColor: '#B2DBBF',
-    borderColor: '#B2DBBF',
+    backgroundColor: '#FF1053',
+    borderColor: '#FF1053',
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.2,
