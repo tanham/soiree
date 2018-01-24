@@ -8,9 +8,7 @@ import CardSection from '../components/Card';
 import DateDetail from '../components/DateDetail';
 
 class Home extends Component {
-  static navigationOptions = {
-   headerTintColor: '#0072BB',
- };
+
   render() {
 
     const { navigate } = this.props.navigation;
@@ -28,15 +26,33 @@ class Home extends Component {
         <View style={styles.buttonLayoutStlye}>
           <View style={{flexDirection: 'row', }}>
 
-            <View style={styles.anotherCustomButtonStyle}>
+            <View style={{width: 150,
+            height: 150,
+            backgroundColor: '#FF1053',
+            borderColor: '#FF1053',
+            shadowColor: '#000',
+            shadowOffset: { width: 0, height: 2 },
+            shadowOpacity: 0.2,
+            flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center',}}>
               <Button
               onPress={() => navigate('CuratedResults', { name: 'Dates'})}
-              title='Eats'
+              title='Dine'
               color="#fff"
               />
             </View>
 
-            <View style={styles.anotherCustomButtonStyle}>
+            <View style={{width: 150,
+            height: 150,
+            backgroundColor: '#731DD8',
+            borderColor: '#731DD8',
+            shadowColor: '#000',
+            shadowOffset: { width: 0, height: 2 },
+            shadowOpacity: 0.2,
+            flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center',}}>
               <Button
               onPress={() => navigate('CuratedResults', { name: 'Dates'})}
               title='Active'
@@ -47,15 +63,70 @@ class Home extends Component {
 
           <View style={{flexDirection: 'row', }}>
 
-            <View style={styles.anotherCustomButtonStyle}>
+            <View style={{width: 150,
+            height: 150,
+            backgroundColor: '#66C7F4',
+            borderColor: '#66C7F4',
+            shadowColor: '#000',
+            shadowOffset: { width: 0, height: 2 },
+            shadowOpacity: 0.2,
+            flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center',}}>
+              <Button
+              onPress={() => navigate('CuratedResults', { name: 'Dates'})}
+              title='Learn'
+              color="#fff"
+              />
+            </View>
+
+            <View style={{width: 150,
+            height: 150,
+            backgroundColor: '#48A9A6',
+            borderColor: '#48A9A6',
+            shadowColor: '#000',
+            shadowOffset: { width: 0, height: 2 },
+            shadowOpacity: 0.2,
+            flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center',}}>
               <Button
               onPress={() => navigate('CuratedResults', { name: 'Dates'})}
               title='Live'
               color="#fff"
               />
             </View>
+          </View>
 
-            <View style={styles.anotherCustomButtonStyle}>
+          <View style={{flexDirection: 'row', }}>
+
+            <View style={{width: 150,
+            height: 150,
+            backgroundColor: '#F8F32B',
+            borderColor: '#F8F32B',
+            shadowColor: '#000',
+            shadowOffset: { width: 0, height: 2 },
+            shadowOpacity: 0.2,
+            flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center',}}>
+              <Button
+              onPress={() => navigate('CuratedResults', { name: 'Dates'})}
+              title='Fun'
+              color="#fff"
+              />
+            </View>
+
+            <View style={{width: 150,
+            height: 150,
+            backgroundColor: '#C1666B',
+            borderColor: '#C1666B',
+            shadowColor: '#000',
+            shadowOffset: { width: 0, height: 2 },
+            shadowOpacity: 0.2,
+            flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center',}}>
               <Button
               onPress={() => navigate('CuratedResults', { name: 'Dates'})}
               title='Random'
@@ -63,6 +134,7 @@ class Home extends Component {
               />
             </View>
           </View>
+
         </View>
       </ScrollView>
     );
@@ -71,10 +143,9 @@ class Home extends Component {
 
 const styles = {
   homeLayoutStyle: {
-    backgroundColor: '#B2DBBF'
+    backgroundColor: '#FFF4E9'
   },
   buttonLayoutStlye: {
-      marginTop: 30,
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
@@ -89,13 +160,13 @@ const styles = {
     shadowOpacity: 0.2
   },
   buttonContainerStyle: {
-    backgroundColor: '#FFB732',
-    borderColor: '#FFB732',
+    backgroundColor: '#2B2D42',
+    borderColor: '#000',
     borderWidth: 0,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.2,
-    height: 94,
+    height: 70,
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
@@ -104,7 +175,7 @@ const styles = {
     width: 150,
     height: 150,
     backgroundColor: '#B2DBBF',
-    borderColor: '#B2DBBF',
+    borderColor: '#2A2A2A',
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.2,

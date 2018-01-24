@@ -1,7 +1,5 @@
-import React from 'react';
-import { AppRegistry, View, Button } from 'react-native';
-import Header from './src/components/Header';
-import PageHeader from './src/components/PageHeader';
+import React, { Component } from 'react';
+import { AppRegistry } from 'react-native';
 
 import App from './App';
 import 'expo';
