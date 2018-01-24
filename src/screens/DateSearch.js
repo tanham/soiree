@@ -122,7 +122,7 @@ export default class DateSearch extends React.Component {
   };
   render() {
     return (
-      <ScrollView style={{backgroundColor: '#e3d6bb', flex: 1}}>
+      <ScrollView style={{backgroundColor: '#fff6e2', flex: 1}}>
         <Text style={styles.titleTextStyle}>
           Create My Own Experience
         </Text>
