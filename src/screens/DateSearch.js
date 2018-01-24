@@ -122,7 +122,7 @@ export default class DateSearch extends React.Component {
   };
   render() {
     return (
-      <ScrollView style={{backgroundColor: '#fff6e2', flex: 1}}>
+      <ScrollView style={{backgroundColor: '#ddd', flex: 1}}>
         <Text style={styles.titleTextStyle}>
           Create My Own Experience
         </Text>
@@ -241,8 +241,8 @@ const styles = StyleSheet.create({
     color: '#fff'
   },
   anotherCustomButtonStyle: {
-    backgroundColor: '#B2DBBF',
-    borderColor: '#B2DBBF',
+    backgroundColor: '#ca412b',
+    borderColor: '#ca412b',
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.2,
