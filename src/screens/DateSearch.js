@@ -117,6 +117,9 @@ export default class DateSearch extends React.Component {
     return message;
   };
 
+  handleClick() {
+    console.log('clicked');
+  };
   render() {
     return (
       <ScrollView style={{backgroundColor: '#B2DBBF'}}>
@@ -135,28 +138,28 @@ export default class DateSearch extends React.Component {
         <View style={{flexDirection: 'row', alignSelf:'center'}}>
           <View style={{backgroundColor: 'green'}}>
             <Button
-            onPress={console.log('clicked price button')}
+            onPress={this.handleClick}
             title='$'
             color="#fff"
             />
           </View>
           <View style={{backgroundColor: 'green'}}>
             <Button
-            onPress={console.log('clicked price button')}
+            onPress={this.handleClick}
             title='$$'
             color="#fff"
             />
           </View>
           <View style={{backgroundColor: 'green'}}>
             <Button
-            onPress={console.log('clicked price button')}
+            onPress={this.handleClick}
             title='$$$'
             color="#fff"
             />
           </View>
           <View style={{backgroundColor: 'green'}}>
             <Button
-            onPress={console.log('clicked price button')}
+            onPress={this.handleClick}
             title='$$$$'
             color="#fff"
             />
