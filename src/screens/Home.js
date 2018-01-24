@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ScrollView, Text, View, Button, TouchableOpacity } from 'react-native';
+import { ScrollView, Text, View, ImageBackground, Button, TouchableOpacity } from 'react-native';
 import { Tile, List, ListItem } from 'react-native-elements';
 import Header from '../components/Header';
 import DatesList from '../components/DatesList';
@@ -12,6 +12,7 @@ class Home extends Component {
   render() {
 
     const { navigate } = this.props.navigation;
+    const remote = 'http://www.tasteinsf.com/public/images/default-restaurant-thumbnail-250x244.png';
     return (
       <ScrollView style={styles.homeLayoutStyle}>
 
@@ -22,6 +23,7 @@ class Home extends Component {
           color="#fff"
           />
         </View>
+
 
         <View style={styles.buttonLayoutStlye}>
           <View style={{flexDirection: 'row', }}>
@@ -42,7 +44,6 @@ class Home extends Component {
               color="#fff"
               />
             </View>
-
             <View style={{width: 150,
             height: 150,
             backgroundColor: '#731DD8',

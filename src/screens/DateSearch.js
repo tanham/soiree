@@ -158,8 +158,8 @@ export default class DateSearch extends React.Component {
           Create My Own Experience
         </Text>
 
-        <View style={{flexDirection: 'row', alignSelf:'center', marginLeft: 5, marginRight: 5 }}>
-          <View style={{backgroundColor: '#030202'}}>
+        <View style={{flexDirection: 'row', alignSelf:'center',  }}>
+          <View style={{backgroundColor: '#030202',marginLeft: 5, marginRight: 5,}}>
             <Button
             onPress={this.handlePriceLevel1}
             title='$'
