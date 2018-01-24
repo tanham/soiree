@@ -153,13 +153,23 @@ export default class DateSearch extends React.Component {
   };
   render() {
     return (
-      <ScrollView style={{backgroundColor: '#e8e8e8', flex: 1}}>
+      <ScrollView style={{backgroundColor: '#e8e8e8', flex: 1, marginTop: 20}}>
         <Text style={styles.titleTextStyle}>
           Create My Own Experience
         </Text>
 
         <View style={{flexDirection: 'row', alignSelf:'center',  }}>
-          <View style={{backgroundColor: '#030202',marginLeft: 5, marginRight: 5,}}>
+          <View style={{
+            backgroundColor: '#030202',
+            marginLeft: 5,
+            marginRight: 5,
+            borderColor:'#030202',
+            borderRadius: 5,
+            shadowColor: '#fff',
+            shadowOffset: { width: 0, height: 2},
+            shadowOpacity: 0.1,
+            shadowRadius: 5,
+          }}>
             <Button
             onPress={this.handlePriceLevel1}
             title='$'
