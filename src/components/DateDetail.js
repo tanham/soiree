@@ -13,7 +13,6 @@ const DateDetail = (props) => {
     <CardSection>
     <View style={styles.headerContentStyle}>
     <Text style={styles.headerTextStyle}>{props.date.fields.Name}</Text>
-    <Text style={{color: '#030202'}}>Some location</Text>
 
     </View>
     </CardSection>
@@ -23,7 +22,7 @@ const DateDetail = (props) => {
       <Button
       onPress={() => navigate('DateScreen', { name: 'Date'})}
       title='Click Me'
-      color="#fff"
+      color="#030202"
       />
     </View>
 

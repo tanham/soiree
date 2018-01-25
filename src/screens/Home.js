@@ -41,7 +41,7 @@ class Home extends Component {
               <Button
               onPress={() => navigate('CuratedResults', { name: 'Dates'})}
               title='Dine'
-              color="#fff"
+              color="#030202"
               />
             </View>
             <View style={{width: 150,
@@ -57,7 +57,7 @@ class Home extends Component {
               <Button
               onPress={() => navigate('CuratedResults', { name: 'Dates'})}
               title='Active'
-              color="#fff"
+              color="#030202"
               />
             </View>
           </View>
@@ -77,7 +77,7 @@ class Home extends Component {
               <Button
               onPress={() => navigate('CuratedResults', { name: 'Dates'})}
               title='Learn'
-              color="#fff"
+              color="#030202"
               />
             </View>
 
@@ -94,7 +94,7 @@ class Home extends Component {
               <Button
               onPress={() => navigate('CuratedResults', { name: 'Dates'})}
               title='Live'
-              color="#fff"
+              color="#030202"
               />
             </View>
           </View>
@@ -114,7 +114,7 @@ class Home extends Component {
               <Button
               onPress={() => navigate('CuratedResults', { name: 'Dates'})}
               title='Fun'
-              color="#fff"
+              color="#030202"
               />
             </View>
 
@@ -131,7 +131,7 @@ class Home extends Component {
               <Button
               onPress={() => navigate('CuratedResults', { name: 'Dates'})}
               title='Random'
-              color="#fff"
+              color="#030202"
               />
             </View>
           </View>
@@ -161,7 +161,7 @@ const styles = {
     shadowOpacity: 0.2
   },
   buttonContainerStyle: {
-    backgroundColor: '#2B2D42',
+    backgroundColor: '#030202',
     borderColor: '#000',
     borderWidth: 0,
     shadowColor: '#000',

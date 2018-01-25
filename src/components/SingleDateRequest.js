@@ -28,7 +28,8 @@ export default class SingleDateRequest extends React.Component {
       phoneNumber: response.data.result.formatted_phone_number,
       rating: response.data.result.rating,
       website: response.data.result.website,
-      maps: response.data.result.url
+      maps: response.data.result.url,
+      price: response.data.result.price_level
     }));
   };
 
@@ -49,24 +50,25 @@ export default class SingleDateRequest extends React.Component {
               justifyContent: 'center',
               alignItems: 'center'}}>
               <Text style={{
-                fontSize: 20,
+                fontSize: 32,
                 color: '#030202'}}>
                 {this.state.name}</Text>
               <Text
-                style={{backgroundColor: '#2B2D42', color: '#fff'}}
+                style={{backgroundColor: '#030202', color: '#fff', fontSize: 18}}
                 onPress={() => Linking.openURL(`${this.state.maps}`)}>
                 {this.state.address}
                 </Text>
             </View>
           </CardSection>
           <CardSection>
-            <Text>
+            <Text style={{fontSize: 16}}>
               Rating: {this.state.rating}
             </Text>
           </CardSection>
+
           <CardSection>
             <Text
-              style={{color: '#0000ee'}}
+              style={{color: '#0000ee', fontSize: 16}}
               onPress={() => Linking.openURL(`${this.state.website}`)}>
               {this.state.website}
             </Text>

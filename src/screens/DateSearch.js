@@ -46,7 +46,7 @@ const DateDetail = (props) => {
           <Button
           onPress={() => navigate('DateScreen', { name: 'Date'}, placeid=props.date.place_id) }
           title='Click Me'
-          color="#fff"
+          color="#030202"
           name={props.date.name}
           />
         </View>
@@ -217,7 +217,7 @@ export default class DateSearch extends React.Component {
           <Button
           onPress={this.makeApiRequest}
           title='Search'
-          color="#fff"
+          color="#030202"
           />
         </View>
 
