@@ -123,7 +123,7 @@ export default class DateSearch extends React.Component {
   }
 
   makeApiRequest(props) {
-    let url = `${placesSearchBaseURL}${this.state.location.coords.latitude},${this.state.location.coords.longitude}&radius=5000&key=${GOOGLE_API_KEY}&types=${this.state.text}&maxprice=${this.state.priceLevel}`;
+    let url = `${placesSearchBaseURL}${this.state.location.coords.latitude},${this.state.location.coords.longitude}&radius=5000&key=${GOOGLE_API_KEY}&types=establishment&keyword=${this.state.text}&maxprice=${this.state.priceLevel}`;
     // will automatically be executed when component is about to be rendered
     this.handlePriceLevel1();
 
