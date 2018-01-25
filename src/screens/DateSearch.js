@@ -200,8 +200,8 @@ export default class DateSearch extends React.Component {
         </View>
 
         <View style={{
-          width: 200,
-          marginTop: 10,
+          width: 210,
+          marginTop: 20,
           marginBottom: 10,
           paddingTop: 10,
           paddingBottom: 10,
