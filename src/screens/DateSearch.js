@@ -64,7 +64,8 @@ export default class DateSearch extends React.Component {
       location: null,
       errorMessage: null,
       dates: [],
-      priceLevel: ''
+      priceLevel: '',
+      text: 'restaurant'
     };
     this.makeApiRequest = this.makeApiRequest.bind(this);
     this.renderDates = this.renderDates.bind(this);
@@ -122,7 +123,7 @@ export default class DateSearch extends React.Component {
   }
 
   makeApiRequest(props) {
-    let url = `${placesSearchBaseURL}${this.state.location.coords.latitude},${this.state.location.coords.longitude}&radius=2000&key=${GOOGLE_API_KEY}&types=restaurant&maxprice=${this.state.priceLevel}`;
+    let url = `${placesSearchBaseURL}${this.state.location.coords.latitude},${this.state.location.coords.longitude}&radius=5000&key=${GOOGLE_API_KEY}&types=${this.state.text}&maxprice=${this.state.priceLevel}`;
     // will automatically be executed when component is about to be rendered
     this.handlePriceLevel1();
 
@@ -198,6 +199,18 @@ export default class DateSearch extends React.Component {
             />
           </View>
         </View>
+
+        <TextInput
+          style={{
+            height: 40,
+            width: 200,
+            alignSelf: 'center',
+            borderColor: '#030202',
+            marginTop: 20,
+            borderWidth: 1}}
+          onChangeText={(text) => this.setState({text})}
+          value={this.state.text}
+        />
 
         <View style={{
           width: 210,
